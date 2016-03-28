@@ -1,0 +1,20 @@
+.bg-light.dark.p30.br-b.br-grey
+  %p.lead.mb30
+    Lista de Locales
+  - if flash[:notice] !=nil
+    %p.lead.mb30
+      %b.text-warning
+        = flash[:notice]
+  - if flash[:error] != nil
+    %p.lead.mb30
+      %b.text-danger
+        = flash[:error]
+
+  .row
+    .col-md-3
+      .input-group.input-group-merge.input-hero.mb10
+        %a.btn.btn-primary.btn-block{:href => "#{new_rental_path}"}
+          Registrar Local
+.tab-block.p20.mt10
+  %section
+    = render :partial => 'table'

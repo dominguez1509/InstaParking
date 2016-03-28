@@ -1,0 +1,148 @@
+!!!
+%html
+  %head
+    %title InstaParking
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    %link{:href => "https://fonts.googleapis.com/css?family=Open+Sans:400,600,700", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700", :rel => "stylesheet", :type => "text/css"}
+    / Theme CSS
+    = stylesheet_link_tag "default_skin/css/theme", media: "screen", rel: "stylesheet", type: "text/css"
+    / Admin Panels CSS
+    = stylesheet_link_tag "admin-plugins/admin-panels/adminpanels", media: "screen", rel: "stylesheet", type: "text/css"
+    = stylesheet_link_tag "plugins/magnific/magnific-popup", media: "screen", rel: "stylesheet", type: "text/css"
+    = stylesheet_link_tag "admin-plugins/admin-modal/adminmodal", media: "screen", rel: "stylesheet", type: "text/css"
+    / Admin Forms CSS
+    = stylesheet_link_tag "admin-forms/css/admin-forms", media: "screen", rel: "stylesheet", type: "text/css"
+  %body.dashboard-page.sb-l-o.sb-r-c
+    / Start: Main
+    #main
+      / Start: Header
+      %header.navbar.navbar-fixed-top.bg-light
+        .navbar-branding  
+          %a.navbar-brand{:href => "#{root_path}"}
+            %b InstaParking
+        %ul.nav.navbar-nav.navbar-right
+          %li.dropdown
+            %a.dropdown-toggle.fw600.p15{"data-toggle" => "dropdown", :href => "#"}
+              %span
+                = current_user.email
+              %span.caret.caret-tp.hidden-xs
+            %ul.dropdown-menu.dropdown-persist.pn.w250.bg-white{:role => "menu"}
+              %li.br-t.of-h
+                %a.fw600.p12.animated.animated-short.fadeInDown#signout{:href => "#{root_path}"}
+                  %span.fa.fa-power-off.pr5
+                  Cerrar Sesión
+      / End: Header
+      / Start: Sidebar
+      %aside#sidebar_left.nano.nano-primary
+        .nano-content
+          / Start: Sidebar Header
+          %header.sidebar-header
+            .user-menu
+              .row.text-center.mbn
+                .col-xs-4
+                  %a.text-primary{"data-placement" => "top", "data-toggle" => "tooltip", :href => "dashboard.html", :title => "Dashboard"}
+                    %span.glyphicons.glyphicons-home
+                .col-xs-4
+                  %a.text-info{"data-placement" => "top", "data-toggle" => "tooltip", :href => "pages_messages.html", :title => "Messages"}
+                    %span.glyphicons.glyphicons-inbox
+                .col-xs-4
+                  %a.text-alert{"data-placement" => "top", "data-toggle" => "tooltip", :href => "pages_profile.html", :title => "Tasks"}
+                    %span.glyphicons.glyphicons-bell
+                .col-xs-4
+                  %a.text-system{"data-placement" => "top", "data-toggle" => "tooltip", :href => "pages_timeline.html", :title => "Activity"}
+                    %span.glyphicons.glyphicons-imac
+                .col-xs-4
+                  %a.text-danger{"data-placement" => "top", "data-toggle" => "tooltip", :href => "pages_profile.html", :title => "Settings"}
+                    %span.glyphicons.glyphicons-settings
+                .col-xs-4
+                  %a.text-warning{"data-placement" => "top", "data-toggle" => "tooltip", :href => "pages_gallery.html", :title => "Cron Jobs"}
+                    %span.glyphicons.glyphicons-restart
+          / End: Sidebar Header
+          / sidebar menu
+          %ul.nav.sidebar-menu
+            %li.sidebar-label.pt20 MENU ADMINISTRADOR
+            %li.active
+              %a{:href => "#{root_path}"}
+                %span.glyphicons.glyphicons-home
+                %span.sidebar-title Dashboard
+              %li
+                %a.accordion-toggle{:href => "#"}
+                  %span.glyphicons.glyphicons-dashboard
+                  %span.sidebar-title Alquileres
+                  %span.caret
+                %ul.nav.sub-nav
+                  %li
+                    %a{:href => "#{rentals_path}"}
+                      %span.glyphicons.glyphicons-shield
+                      Mis Locales
+          .sidebar-toggle-mini
+            %a{:href => "#"}
+              %span.fa.fa-sign-out
+      / Start: Content-Wrapper
+      %section#content_wrapper
+        / Start: Topbar
+        %header#topbar
+          .topbar-left
+            %ol.breadcrumb
+              %li.crumb-icon
+                %a{:href => "#{root_path}"}
+                  %span.glyphicon.glyphicon-home
+              %li.crumb-link
+                %a{:href => "#{root_path}"} Home
+              %li.crumb-trail Dashboard
+        / End: Topbar
+        / Begin: Content
+        %section#content.animated.fadeIn
+          = yield
+        / End: Content
+      / End: Content-Wrapper
+    / End: Main
+    / BEGIN MODALS
+    #modal-text-loading.popup-basic.p25.mfp-with-anim.mfp-hide
+      %h2.lh30.mt15.text-center
+        %b.text-primary Cargando
+      %p.text-center Espere un momento porfavor
+    / BEGIN: PAGE SCRIPTS
+    / jQuery
+    = javascript_include_tag 'jquery_ui/jquery-ui.min'
+    / Bootstrap
+    = javascript_include_tag 'bootstrap/bootstrap.min'
+    / Sparklines CDN
+    %script{:src => "http://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js", :type => "text/javascript"}
+
+    / Holder js
+    = javascript_include_tag 'bootstrap/holder.min'
+    / Theme Javascript
+    = javascript_include_tag 'main'
+    = javascript_include_tag 'utility/utility'
+    = javascript_include_tag 'plugins/magnific/jquery.magnific-popup'
+    / Form Validations
+    = javascript_include_tag 'admin-forms/js/jquery.validate.min'
+    = javascript_include_tag 'admin-forms/js/additional-methods.min'
+    / Admin Panels
+    = javascript_include_tag 'admin-plugins/admin-panels/json2'
+    = javascript_include_tag 'admin-plugins/admin-panels/jquery.ui.touch-punch.min'
+    = javascript_include_tag 'admin-plugins/admin-panels/adminpanels'
+    / Page Javascript
+    = javascript_include_tag 'pages/widgets'
+
+    :javascript
+      $(document).ready(function() {
+
+          "use strict";
+
+          // Init Theme Core      
+          Core.init({
+              sbm: "sb-l-c",
+          });
+
+      });
+
+      $('#signout').click(function(){
+       append_url_ajax("#{destroy_user_session_path}", 'tbl-cont', null, 'DELETE');
+       $('#alert-1').slideToggle('fast');
+      });
+    / END: PAGE SCRIPTS

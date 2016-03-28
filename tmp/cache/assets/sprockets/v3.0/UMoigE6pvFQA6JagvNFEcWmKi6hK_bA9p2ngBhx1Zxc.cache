@@ -1,0 +1,32 @@
+{:uriI"›file://app/assets/javascripts/plugins/fancytree/ajax-tree-fs.json?type=application/json&id=197c5444906dd28a34c1849704d07d763ab5e73b52a18ee3699140cd3cb2d617:ET:load_pathI"app/assets/javascripts;T:filenameI"?app/assets/javascripts/plugins/fancytree/ajax-tree-fs.json;T:	nameI"#plugins/fancytree/ajax-tree-fs;T:logical_pathI"(plugins/fancytree/ajax-tree-fs.json;T:content_typeI"application/json;T:sourceI"`[
+	{"title": "/", "expanded": true, "folder": true, "children": [
+		{"title": "dev", "folder": true},
+		{"title": "etc", "folder": true, "children": [
+			{"title": "cups"},
+			{"title": "httpd"},
+			{"title": "init.d"}
+		]},
+		{"title": "sbin", "folder": true},
+		{"title": "tmp", "folder": true},
+		{"title": "Users", "expanded": true, "folder": true, "children": [
+			{"title": "jdoe", "folder": true},
+			{"title": "jmiller", "folder": true},
+			{"title": "mysql", "folder": true}
+		]},
+		{"title": "usr", "expanded": true, "folder": true, "children": [
+			{"title": "bin", "folder": true},
+			{"title": "lib", "folder": true},
+			{"title": "local", "folder": true}
+		]},
+		{"title": "var", "expanded": true, "folder": true, "children": [
+			{"title": "log", "folder": true},
+			{"title": "spool", "folder": true},
+			{"title": "yp", "folder": true}
+		]}
+	]}
+]
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Mfile-digest://app/assets/javascripts/plugins/fancytree/ajax-tree-fs.json;TTF:charsetI"
+utf-8;F:digest"%´“ÄËŽ†þâqdlsÑÞzÉ{³°Í>Àö¦²›ø<Ü:lengthi`:dependencies_digest"%ô/è‚Ý«°‚ÉÕa–&P¿c	â[éé]¢QÖå™:idI"E197c5444906dd28a34c1849704d07d763ab5e73b52a18ee3699140cd3cb2d617;F:
+mtimel+ëNøV

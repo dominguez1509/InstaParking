@@ -1,0 +1,25 @@
+.col-md-12
+  .panel.panel-visible
+    .panel-heading
+      .panel-title.hidden-xs
+        %span.glyphicon.glyphicon-tasks>
+        Lista de Locales
+    .panel-body.pn
+      %table.table.table-striped.table-hover{:cellspacing => "0", :width => "100%"}
+        %thead
+          %tr
+            %th Cantidad de Espacios
+            %th Dirección
+            %th Acciones
+        %tbody
+          - @rentals.each do |rental|
+            %tr
+              %td
+                = rental.space_quantity.to_s
+              %td
+                = rental.address.to_s
+              %td
+                %a.btn.btn-warning{:href => "#{edit_rental_path(rental.id)}"}
+                  Editar
+                %a.btn.btn-danger{:href => "#{rental_path(rental.id)}", 'data-method' => 'DELETE'}
+                  Eliminar

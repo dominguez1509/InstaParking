@@ -1,0 +1,15 @@
+{:uriI"®file://app/assets/javascripts/plugins/c3charts/extensions/exporter/config.json?type=application/json&id=c9b4a8047f6df9ae1a06e72fd89a3ea5f25d74dc2fbf57ef53786d2d5f620fda:ET:load_pathI"app/assets/javascripts;T:filenameI"Lapp/assets/javascripts/plugins/c3charts/extensions/exporter/config.json;T:	nameI"0plugins/c3charts/extensions/exporter/config;T:logical_pathI"5plugins/c3charts/extensions/exporter/config.json;T:content_typeI"application/json;T:sourceI"Ê{
+	"js": [
+		"../../bower_components/d3/d3.min.js",
+		"../../c3.min.js"
+	],
+	"css": [
+		"../../c3.css"
+	],
+
+	"template": "<html><head><meta charset=\"utf-8\"><style>{0}</style></head><body><div id=\"chart\"></div></body></html>"
+};T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Zfile-digest://app/assets/javascripts/plugins/c3charts/extensions/exporter/config.json;TTF:charsetI"
+utf-8;F:digest"%àÄw3Î†•‰8&äjÛ#Ô∂¸è´ªx\-sπÕ:lengthiÊ:dependencies_digest"%>ùØ¥ë$ÜmÃ8ÄFˆS∂âÈxw°<*$ºœ>cp√:idI"Ec9b4a8047f6df9ae1a06e72fd89a3ea5f25d74dc2fbf57ef53786d2d5f620fda;F:
+mtimel+BN¯V

@@ -1,0 +1,19 @@
+{:uriI"¡file://app/assets/javascripts/plugins/datatables/extensions/Editor/Readme.txt?type=text/plain&id=3909c79f173e34dfb946a8a30c4fda65d39b8631c14d3f4610ae1111170e141b:ET:load_pathI"app/assets/javascripts;T:filenameI"Kapp/assets/javascripts/plugins/datatables/extensions/Editor/Readme.txt;T:	nameI"0plugins/datatables/extensions/Editor/Readme;T:logical_pathI"4plugins/datatables/extensions/Editor/Readme.txt;T:content_typeI"text/plain;T:sourceI"-Editor - Editing for DataTables
+===============================
+
+Editor is a Create, Read, Update and Delete (CRUD) plug-in for DataTables that provides the ability to easily add, edit and delete rows on a database that is displayed by a DataTable. Editor provides a clean API that allows form creation and manipulation to let the end user modify enter the required data, and a well defined server interaction protocol. This simple example shows a table with five fields, each of which can be edited as plain text.
+
+Full documentation and instructions on how Editor can be setup and configured is available on the Editor web-site:
+	http://editor.datatables.net .
+
+Also available for Editor is Generator, a web-based interface which allows you to enter information about a table and its fields that you wish to be editable, and Generator will create all of the code required for you:
+	http://editor.datatables.net/generator/ .
+
+Finally, if you require any help with Editor, professional support is available:
+	http://editor.datatables.net/support/ .
+
+Enjoy using Editor!;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"4processors:type=text/plain&file_type=text/plain;TTI"Yfile-digest://app/assets/javascripts/plugins/datatables/extensions/Editor/Readme.txt;TTF:charsetI"
+utf-8;F:digest"%fÊSÚü­§>à-Èy¾œkG­“6üvûÒÌ¥<0M¹ÝÜ:lengthi-:dependencies_digest"%Mê·ï±â"ùsy©ùÎÏê!Ì’k–ïpfÐ€òØ™:idI"E3909c79f173e34dfb946a8a30c4fda65d39b8631c14d3f4610ae1111170e141b;F:
+mtimel+œNøV

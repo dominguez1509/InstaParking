@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.5.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -45,3 +45,13 @@ group :development do
   gem 'spring'
 end
 
+# Use devise
+gem 'devise'
+# gem simple form
+gem 'simple_form'
+# gen paperclip
+gem 'paperclip'
+# gem nested_form
+gem "nested_form"
+# Gem Haml
+gem 'haml-rails'

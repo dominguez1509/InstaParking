@@ -1,0 +1,27 @@
+{:uriI"’file://app/assets/javascripts/plugins/scrollto/tests/index.html?type=text/html&id=8cee711d4acee15ce5009dcdba5ab7defb822b356e4774a3b6fb449a56c799c9:ET:load_pathI"app/assets/javascripts;T:filenameI"=app/assets/javascripts/plugins/scrollto/tests/index.html;T:	nameI"!plugins/scrollto/tests/index;T:logical_pathI"&plugins/scrollto/tests/index.html;T:content_typeI"text/html;T:sourceI"õ<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>jQuery.ScrollTo Tests</title>
+	<meta name="keywords" content="javascript, jquery, plugins, scroll, scrollTo, smooth, animation, to, effect, ariel, flesler, window, overflow, element, navigation, customizable" />
+	<meta name="description" content="Tests for jQuery ScrollTo. Made by Ariel Flesler." />
+	<meta name="robots" content="index,follow" />
+</head>
+<body>
+	<h1>jQuery.ScrollTo Tests</h1>
+	
+	<ul>
+		<li><a href="WinMaxY-compat.html">Max window scrolling (compat mode)</a></li>
+		<li><a href="WinMaxY-quirks.html">Max window scrolling (quirks mode)</a></li>
+		<li><a href="WinMaxY-with-iframe-compat.html">Max window scrolling, within an iframe (compat mode)</a></li>
+		<li><a href="WinMaxY-with-iframe-quirks.html">Max window scrolling, within an iframe (quirks mode)</a></li>
+		<li><a href="WinMaxY-to-iframe-compat.html">Max iframe scrolling from outside (compat mode)</a></li>
+		<li><a href="WinMaxY-to-iframe-quirks.html">Max iframe scrolling from outside (quirks mode)</a></li>
+	</ul>
+</body>
+</html>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Kfile-digest://app/assets/javascripts/plugins/scrollto/tests/index.html;TTF:charsetI"
+utf-8;F:digest"%&Å¯hùÆTÀ¹!Zš¡ü¢Ûsx7û¬Ëzš­l_tŒ:lengthiõ:dependencies_digest"%Éc©—q\Y¨„ ¥+;B¼»Ë×Õ¬K:FbÐ:idI"E8cee711d4acee15ce5009dcdba5ab7defb822b356e4774a3b6fb449a56c799c9;F:
+mtimel+FOøV

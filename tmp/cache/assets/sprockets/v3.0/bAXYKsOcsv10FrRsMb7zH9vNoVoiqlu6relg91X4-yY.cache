@@ -1,0 +1,16 @@
+{:uriI"˜file://app/assets/javascripts/editors/markitup/templates/preview.html?type=text/html&id=b64d32655782c05fc6503f543b69ffebf901b5a29e043d97e6e1abd7b69cb07b:ET:load_pathI"app/assets/javascripts;T:filenameI"Capp/assets/javascripts/editors/markitup/templates/preview.html;T:	nameI"'editors/markitup/templates/preview;T:logical_pathI",editors/markitup/templates/preview.html;T:content_typeI"text/html;T:sourceI"–<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>markItUp! preview template</title>
+<link rel="stylesheet" type="text/css" href="~/templates/preview.css" />
+</head>
+<body>
+<!-- content -->
+</body>
+</html>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Qfile-digest://app/assets/javascripts/editors/markitup/templates/preview.html;TTF:charsetI"
+utf-8;F:digest"%Ï¢•àråŸú¢jcù-ý'dú·‰°ûƒ-¹õ“ž³0-:lengthi–:dependencies_digest"%ZPúSÍD·±®ø|e7§Ë¨Ã=ÙU‘¿ÆÖ„z÷:idI"Eb64d32655782c05fc6503f543b69ffebf901b5a29e043d97e6e1abd7b69cb07b;F:
+mtimel+-NøV

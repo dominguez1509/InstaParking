@@ -1,0 +1,22 @@
+{:uriI"°file://app/assets/javascripts/plugins/datatables/examples/resources/de_DE.txt?type=text/plain&id=38b0a59b47326cd281f18bfe90f33844d44d50ad62ae6993d6a2e146c6a10fc1:ET:load_pathI"app/assets/javascripts;T:filenameI"Kapp/assets/javascripts/plugins/datatables/examples/resources/de_DE.txt;T:	nameI"0plugins/datatables/examples/resources/de_DE;T:logical_pathI"4plugins/datatables/examples/resources/de_DE.txt;T:content_typeI"text/plain;T:sourceI"ø{
+	"processing": "Bitte warten...",
+	"lengthMenu": "_MENU_ Eintr√§ge anzeigen",
+	"zeroRecords": "Keine Eintr√§ge vorhanden.",
+	"info": "_START_ bis _END_ von _TOTAL_ Eintr√§gen",
+	"infoEmpty": "0 bis 0 von 0 Eintr√§gen",
+	"infoFiltered": "(gefiltert von _MAX_  Eintr√§gen)",
+	"infoPostFix": "",
+	"search": "Suchen",
+	"url": "",
+	"paginate": {
+		"first":    "Erster",
+		"previous": "Zur√ºck",
+		"next":     "N√§chster",
+		"last":     "Letzter"
+	}
+};T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"4processors:type=text/plain&file_type=text/plain;TTI"Yfile-digest://app/assets/javascripts/plugins/datatables/examples/resources/de_DE.txt;TTF:charsetI"
+utf-8;F:digest"%ÎB
+FÃ<Í·òRËÿbÜ;≈Ñx¥@”êitU©û∂‹@:lengthiø:dependencies_digest"%œêtMXI{ˆîú∫sÌüÕ˛”πâÓU¯2sqo:idI"E38b0a59b47326cd281f18bfe90f33844d44d50ad62ae6993d6a2e146c6a10fc1;F:
+mtimel+jN¯V

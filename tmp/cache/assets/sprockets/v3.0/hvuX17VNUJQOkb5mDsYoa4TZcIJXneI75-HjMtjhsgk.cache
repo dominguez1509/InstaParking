@@ -1,0 +1,23 @@
+{:uriI"›file://app/assets/javascripts/plugins/scrollto/tests/WinMaxY-quirks.html?type=text/html&id=8ab7ac788d87e2adadf246070940ca5ee6b63665bee7ff18a4e886f42f72d388:ET:load_pathI"app/assets/javascripts;T:filenameI"Fapp/assets/javascripts/plugins/scrollto/tests/WinMaxY-quirks.html;T:	nameI"*plugins/scrollto/tests/WinMaxY-quirks;T:logical_pathI"/plugins/scrollto/tests/WinMaxY-quirks.html;T:content_typeI"text/html;T:sourceI"F<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>jQuery.ScrollTo</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="../jquery.scrollTo.js"></script>
+	<script type="text/javascript" src="test.js"></script>
+</head>
+<body>
+	<h1>jQuery.ScrollTo - Test Window MaxY - Quirks Mode</h1>
+
+	<div style="height:1500px; width:500px; padding:0 50px; background-color:#AAA">
+		&nbsp;
+	</div>
+	<script type="text/javascript">
+		$(window).test();
+	</script>
+</html>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Tfile-digest://app/assets/javascripts/plugins/scrollto/tests/WinMaxY-quirks.html;TTF:charsetI"
+utf-8;F:digest"%Ò”5Ðˆi‰íåå†2=ß$Ñ ¹íºß3Ôò”`8«»:lengthiF:dependencies_digest"%¹mÃþË”žx6ä‡ŠþžÞýñ¡üÉaÔèÓäË‘:idI"E8ab7ac788d87e2adadf246070940ca5ee6b63665bee7ff18a4e886f42f72d388;F:
+mtimel+FOøV

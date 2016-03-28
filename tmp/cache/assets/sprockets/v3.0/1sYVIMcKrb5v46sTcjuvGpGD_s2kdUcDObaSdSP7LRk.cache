@@ -1,0 +1,22 @@
+{:uriI"®file://app/assets/javascripts/plugins/datatables/extensions/Editor/examples/php/README.txt?type=text/plain&id=7116ff21127b74157031c02b2f1cf3807fc100305f745f2c80408af8bbb610bd:ET:load_pathI"app/assets/javascripts;T:filenameI"Xapp/assets/javascripts/plugins/datatables/extensions/Editor/examples/php/README.txt;T:	nameI"=plugins/datatables/extensions/Editor/examples/php/README;T:logical_pathI"Aplugins/datatables/extensions/Editor/examples/php/README.txt;T:content_typeI"text/plain;T:sourceI"á# Editor PHP example scripts
+
+The files in this directory are the PHP server-side scripts that are used by the
+Editor examples with a PHP back-end, making use of the provided PHP libraries in
+the Editor package (see the `php` directory at the top level of the Editor
+package).
+
+For full information on using the Editor PHP libraries, please refer to the
+Editor manual online:
+	https://editor.datatables.net/manual/php
+
+If you are interested in using Editor with a server-side environment that does
+not have PHP available, please refer to the client / server communication
+protocol that Editor uses, for information on how to write server-script scripts
+that will operate with Editor:
+	https://editor.datatables.net/manual/client-server
+
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"4processors:type=text/plain&file_type=text/plain;TTI"ffile-digest://app/assets/javascripts/plugins/datatables/extensions/Editor/examples/php/README.txt;TTF:charsetI"
+utf-8;F:digest"%8éŽbk4Pƒz00,‹„Á®·g{¤wvSA	Æ¦Ê:lengthiá:dependencies_digest"%MÈ)ûR?dKyÝ¢p F½Ì¸~ }À{%ª*æ6q:idI"E7116ff21127b74157031c02b2f1cf3807fc100305f745f2c80408af8bbb610bd;F:
+mtimel+ŽNøV

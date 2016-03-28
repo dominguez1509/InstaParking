@@ -1,0 +1,27 @@
+{:uriI"¡file://app/assets/javascripts/plugins/fancytree/ajax-tree-taxonomy.json?type=application/json&id=4358f5fefbc857645666d6048bd5957f646b263c48c0b37da57a6291bafd051c:ET:load_pathI"app/assets/javascripts;T:filenameI"Eapp/assets/javascripts/plugins/fancytree/ajax-tree-taxonomy.json;T:	nameI")plugins/fancytree/ajax-tree-taxonomy;T:logical_pathI".plugins/fancytree/ajax-tree-taxonomy.json;T:content_typeI"application/json;T:sourceI"A[
+	{"title": "Animalia", "expanded": true, "folder": true, "children": [
+		{"title": "Chordate", "folder": true, "children": [
+			{"title": "Mammal", "children": [
+				{"title": "Primate", "children": [
+					{"title": "Primate", "children": [
+					]},
+					{"title": "Carnivora", "children": [
+					]}
+				]},
+				{"title": "Carnivora", "children": [
+					{"title": "Felidae", "lazy": true}
+				]}
+			]}
+		]},
+		{"title": "Arthropoda", "expanded": true, "folder": true, "children": [
+			{"title": "Insect", "children": [
+				{"title": "Diptera", "lazy": true}
+			]}
+		]}
+	]}
+]
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Sfile-digest://app/assets/javascripts/plugins/fancytree/ajax-tree-taxonomy.json;TTF:charsetI"
+utf-8;F:digest"%{ùä¿ŸiÃ&ì»Kì…ÊúŒ‰¾3«t;îıf:lengthiA:dependencies_digest"%€kâÍd{âàbËM‚÷áˆ)®™K‚Lj¸šJUs:idI"E4358f5fefbc857645666d6048bd5957f646b263c48c0b37da57a6291bafd051c;F:
+mtimel+ìNøV

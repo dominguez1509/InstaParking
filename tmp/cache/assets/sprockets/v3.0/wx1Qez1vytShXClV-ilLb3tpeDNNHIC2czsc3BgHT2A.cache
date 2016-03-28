@@ -1,0 +1,16 @@
+{:uriI"§file://app/assets/javascripts/plugins/scrollto/tests/WinMaxY-with-iframe-compat.html?type=text/html&id=8ac845d6b061e1096075c91b265dfc3ef8dd2302d971e34c78f02c09814f3f38:ET:load_pathI"app/assets/javascripts;T:filenameI"Rapp/assets/javascripts/plugins/scrollto/tests/WinMaxY-with-iframe-compat.html;T:	nameI"6plugins/scrollto/tests/WinMaxY-with-iframe-compat;T:logical_pathI";plugins/scrollto/tests/WinMaxY-with-iframe-compat.html;T:content_typeI"text/html;T:sourceI"“<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>jQuery.ScrollTo</title>
+</head>
+<body>
+	<h1>jQuery.ScrollTo - Test Window MaxY - Compat Mode</h1>
+	
+	<iframe src="WinMaxY-compat.html" />
+</html>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"`file-digest://app/assets/javascripts/plugins/scrollto/tests/WinMaxY-with-iframe-compat.html;TTF:charsetI"
+utf-8;F:digest"%¼'ÔüÈ<BWK/+ŽOõR‚«Îò`¿ì[±ß¡C`:lengthi“:dependencies_digest"%>8`¥ÀËÕ¨cšìHõ£Eî5}#aÇ§ØÃ'´uæ"³£:idI"E8ac845d6b061e1096075c91b265dfc3ef8dd2302d971e34c78f02c09814f3f38;F:
+mtimel+FOøV

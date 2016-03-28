@@ -1,0 +1,17 @@
+{:uriI"§file://app/assets/javascripts/plugins/scrollto/tests/WinMaxY-with-iframe-quirks.html?type=text/html&id=fb79d17870b38a89abcced587b4835ef97e59fbfceca16c685eb9cb6306a5f38:ET:load_pathI"app/assets/javascripts;T:filenameI"Rapp/assets/javascripts/plugins/scrollto/tests/WinMaxY-with-iframe-quirks.html;T:	nameI"6plugins/scrollto/tests/WinMaxY-with-iframe-quirks;T:logical_pathI";plugins/scrollto/tests/WinMaxY-with-iframe-quirks.html;T:content_typeI"text/html;T:sourceI"<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>jQuery.ScrollTo</title>
+</head>
+<body>
+	<h1>jQuery.ScrollTo - Test Window MaxY with Iframe - Quirks Mode</h1>
+
+	<iframe src="WinMaxY-quirks.html" />
+	
+</html>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"`file-digest://app/assets/javascripts/plugins/scrollto/tests/WinMaxY-with-iframe-quirks.html;TTF:charsetI"
+utf-8;F:digest"%˜ø£Á4M'o¼ƒ|By?ˆ<"ë'>Ú§KNÎ±Í/A:lengthi:dependencies_digest"%Öc]—_ý-}ÜFCë’—¦¨½öz¨ >NÉ	$K+ˆ
+:idI"Efb79d17870b38a89abcced587b4835ef97e59fbfceca16c685eb9cb6306a5f38;F:
+mtimel+FOøV
