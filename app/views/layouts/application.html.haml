@@ -69,19 +69,21 @@
                 %span.glyphicons.glyphicons-home
                 %span.sidebar-title Dashboard
               %li
-                %a.accordion-toggle{:href => "#"}
-                  %span.glyphicons.glyphicons-dashboard
-                  %span.sidebar-title Alquileres
-                  %span.caret
-                %ul.nav.sub-nav
-                  %li
-                    %a{:href => "#{type_of_cars_path}"}
-                      %span.glyphicons.glyphicons-shield
-                      Tipos de Auto
-                  %li
-                    %a{:href => "#{rentals_path}"}
-                      %span.glyphicons.glyphicons-shield
-                      Mis Locales
+                %a{:href => "#{type_of_cars_path}"}
+                  %span.glyphicons.glyphicons-shield
+                  Tipos de Auto
+              %li
+                %a{:href => "#{rentals_path}"}
+                  %span.glyphicons.glyphicons-shield
+                  Mis Locales
+              %li
+                %a{:href => "#{cars_path}"}
+                  %span.glyphicons.glyphicons-shield
+                  Carros
+              %li
+                %a{:href => "#{reservations_path}"}
+                  %span.glyphicons.glyphicons-shield
+                  Reservaciones
           .sidebar-toggle-mini
             %a{:href => "#"}
               %span.fa.fa-sign-out

@@ -1,0 +1,37 @@
+.col-md-12
+  .panel.panel-visible
+    .panel-heading
+      .panel-title.hidden-xs
+        %span.glyphicon.glyphicon-tasks>
+        Lista de Reservaciones
+    .panel-body.pn
+      %table.table.table-striped.table-hover{:cellspacing => "0", :width => "100%"}
+        %thead
+          %tr
+            %th ID
+            %th Auto
+            %th Lugar
+            %th Hora Inicio
+            %th Hora Fin
+            %th Hora Estado
+            %th Acciones
+        %tbody
+          - @reservations.each do |reservation|
+            %tr
+              %td
+                = reservation.id.to_s
+              %td
+                = reservation.car_id.to_s
+              %td
+                = reservation.space_id.to_s
+              %td
+                = reservation.start_hour.to_s
+              %td
+                = reservation.end_hour.to_s
+              %td
+                = reservation.status.to_s
+              %td
+                %a.btn.btn-warning{:href => "#{edit_reservation_path(reservation.id)}"}
+                  Editar
+                %a.btn.btn-danger{:href => "#{reservation_path(reservation.id)}", 'data-method' => 'DELETE'}
+                  Eliminar

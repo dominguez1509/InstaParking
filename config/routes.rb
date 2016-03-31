@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   
   resources :type_of_cars
   
+  resources :cars
+  
+  resources :reservations
+  
   resources :rentals do
     collection do
       post 'addMoreRows'

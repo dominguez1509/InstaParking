@@ -23371,3 +23371,693 @@ Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.
 
 Started GET "/assets/open-sans/OpenSans-Light.ttf" for 190.43.170.56 at 2016-03-31 03:39:36 +0000
 Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCars (20160331034610)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "cars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "placa" varchar, "type_of_car_id" integer, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160331034610"]]
+  [1m[36m (16.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/" for 190.43.170.56 at 2016-03-31 03:52:43 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered main/index.haml within layouts/application (0.1ms)
+Completed 200 OK in 777ms (Views: 757.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/cars.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 190.43.170.56 at 2016-03-31 03:52:44 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/glyphicons-pro/glyphicons-regular.woff" for 190.43.170.56 at 2016-03-31 03:52:44 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/font-awesome/fontawesome-webfont.woff?v=4.2.0" for 190.43.170.56 at 2016-03-31 03:52:44 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/glyphicons/glyphicons-halflings-regular.woff" for 190.43.170.56 at 2016-03-31 03:52:44 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/cars" for 190.43.170.56 at 2016-03-31 03:52:45 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mCar Load (0.3ms)[0m  [1mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/_table.html.haml (6.4ms)
+  Rendered cars/index.haml within layouts/application (12.3ms)
+Completed 200 OK in 485ms (Views: 478.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/cars/new" for 190.43.170.56 at 2016-03-31 03:52:47 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered cars/_form.html.haml (11.8ms)
+  Rendered cars/new.html.haml within layouts/application (15.8ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    3:     / Form Wizard
+    4:     .admin-form.theme-primary
+    5:       .panel
+    6:         = simple_form_for(@type_of_car, html: {id: 'admin-form', autocomplete: 'off' }) do |f|
+    7:           .panel-body
+    8:             .section.row
+    9:               .col-md-4
+  app/views/cars/_form.html.haml:6:in `_app_views_cars__form_html_haml__87617106494798683_70093643755840'
+  app/views/cars/new.html.haml:4:in `_app_views_cars_new_html_haml__2414800014769653368_70093644343440'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (133.4ms)
+
+
+Started GET "/cars/new" for 190.43.170.56 at 2016-03-31 03:52:50 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered cars/_form.html.haml (9.9ms)
+  Rendered cars/new.html.haml within layouts/application (12.7ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    3:     / Form Wizard
+    4:     .admin-form.theme-primary
+    5:       .panel
+    6:         = simple_form_for(@type_of_car, html: {id: 'admin-form', autocomplete: 'off' }) do |f|
+    7:           .panel-body
+    8:             .section.row
+    9:               .col-md-4
+  app/views/cars/_form.html.haml:6:in `_app_views_cars__form_html_haml__87617106494798683_70093366307220'
+  app/views/cars/new.html.haml:4:in `_app_views_cars_new_html_haml__2414800014769653368_70093373071160'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (23.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (129.1ms)
+
+
+Started GET "/cars" for 190.43.170.56 at 2016-03-31 03:57:01 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mCar Load (0.3ms)[0m  [1mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/_table.html.haml (6.1ms)
+  Rendered cars/index.haml within layouts/application (10.1ms)
+Completed 200 OK in 528ms (Views: 505.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/fonts/font-awesome/fontawesome-webfont.woff?v=4.2.0" for 190.43.170.56 at 2016-03-31 03:57:03 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/glyphicons-pro/glyphicons-regular.woff" for 190.43.170.56 at 2016-03-31 03:57:03 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/glyphicons/glyphicons-halflings-regular.woff" for 190.43.170.56 at 2016-03-31 03:57:03 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/cars/new" for 190.43.170.56 at 2016-03-31 03:57:03 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mTypeOfCar Load (0.5ms)[0m  [1mSELECT "type_of_cars".* FROM "type_of_cars"[0m
+  Rendered cars/_form.html.haml (32.2ms)
+  Rendered cars/new.html.haml within layouts/application (35.3ms)
+Completed 200 OK in 655ms (Views: 535.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/cars" for 190.43.170.56 at 2016-03-31 03:57:14 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cuhQoqqzOja6DMP9YX/qpRU6zLr1rN93ThMDqT/mFYKrUX4iotjMVBVxodc7NTuS0oSevSz5fhkyLI5SPL9bXQ==", "car"=>{"placa"=>"1asdc3", "type_of_car_id"=>"2", "description"=>"Auto Pequeño"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "cars" ("placa", "type_of_car_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["placa", "1asdc3"], ["type_of_car_id", 2], ["description", "Auto Pequeño"], ["created_at", "2016-03-31 03:57:14.727162"], ["updated_at", "2016-03-31 03:57:14.727162"]]
+  [1m[36m (22.3ms)[0m  [1mcommit transaction[0m
+Redirected to https://instaparking-dominguez1509.c9users.io/cars
+Completed 302 Found in 30ms (ActiveRecord: 23.1ms)
+
+
+Started GET "/cars" for 190.43.170.56 at 2016-03-31 03:57:14 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/_table.html.haml (1.7ms)
+  Rendered cars/index.haml within layouts/application (3.5ms)
+Completed 200 OK in 422ms (Views: 420.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/fonts/glyphicons-pro/glyphicons-regular.woff" for 190.43.170.56 at 2016-03-31 03:57:15 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/font-awesome/fontawesome-webfont.woff?v=4.2.0" for 190.43.170.56 at 2016-03-31 03:57:16 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/glyphicons/glyphicons-halflings-regular.woff" for 190.43.170.56 at 2016-03-31 03:57:16 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/cars" for 190.43.170.56 at 2016-03-31 03:58:16 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mCar Load (3.3ms)[0m  [1mSELECT "cars".* FROM "cars"[0m
+  [1m[35mTypeOfCar Load (0.3ms)[0m  SELECT  "type_of_cars".* FROM "type_of_cars" WHERE "type_of_cars"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered cars/_table.html.haml (9.1ms)
+  Rendered cars/index.haml within layouts/application (21.9ms)
+Completed 200 OK in 436ms (Views: 430.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/fonts/glyphicons-pro/glyphicons-regular.woff" for 190.43.170.56 at 2016-03-31 03:58:17 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/font-awesome/fontawesome-webfont.woff?v=4.2.0" for 190.43.170.56 at 2016-03-31 03:58:17 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/glyphicons/glyphicons-halflings-regular.woff" for 190.43.170.56 at 2016-03-31 03:58:18 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateReservations (20160331040610)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "reservations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "car_id" integer, "space_id" integer, "start_hour" integer, "end_hour" integer, "status" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160331040610"]]
+  [1m[36m (13.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/cars" for 190.43.170.56 at 2016-03-31 04:25:23 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CarsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mCar Load (0.4ms)[0m  [1mSELECT "cars".* FROM "cars"[0m
+  [1m[35mTypeOfCar Load (0.2ms)[0m  SELECT  "type_of_cars".* FROM "type_of_cars" WHERE "type_of_cars"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered cars/_table.html.haml (13.9ms)
+  Rendered cars/index.haml within layouts/application (15.7ms)
+Completed 200 OK in 783ms (Views: 756.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/reservations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 190.43.170.56 at 2016-03-31 04:25:25 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/glyphicons-pro/glyphicons-regular.woff" for 190.43.170.56 at 2016-03-31 04:25:25 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/font-awesome/fontawesome-webfont.woff?v=4.2.0" for 190.43.170.56 at 2016-03-31 04:25:25 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/glyphicons/glyphicons-halflings-regular.woff" for 190.43.170.56 at 2016-03-31 04:25:25 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/type_of_cars" for 190.43.170.56 at 2016-03-31 04:25:27 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TypeOfCarsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mTypeOfCar Load (0.4ms)[0m  SELECT "type_of_cars".* FROM "type_of_cars"
+  Rendered type_of_cars/_table.html.haml (2.6ms)
+  Rendered type_of_cars/index.haml within layouts/application (18.6ms)
+Completed 200 OK in 441ms (Views: 438.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/rentals" for 190.43.170.56 at 2016-03-31 04:25:29 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RentalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mRental Load (0.3ms)[0m  SELECT "rentals".* FROM "rentals"
+  Rendered rentals/_table.html.haml (5.4ms)
+  Rendered rentals/index.haml within layouts/application (7.6ms)
+Completed 200 OK in 432ms (Views: 412.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/cars" for 190.43.170.56 at 2016-03-31 04:25:30 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCar Load (0.3ms)[0m  SELECT "cars".* FROM "cars"
+  [1m[36mTypeOfCar Load (0.1ms)[0m  [1mSELECT  "type_of_cars".* FROM "type_of_cars" WHERE "type_of_cars"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered cars/_table.html.haml (5.4ms)
+  Rendered cars/index.haml within layouts/application (7.7ms)
+Completed 200 OK in 526ms (Views: 522.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/reservations" for 190.43.170.56 at 2016-03-31 04:25:32 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReservationsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mReservation Load (0.3ms)[0m  [1mSELECT "reservations".* FROM "reservations"[0m
+  Rendered reservations/_table.html.haml (6.0ms)
+  Rendered reservations/index.haml within layouts/application (11.0ms)
+Completed 200 OK in 462ms (Views: 456.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/reservations/new" for 190.43.170.56 at 2016-03-31 04:27:03 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReservationsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mCar Load (0.3ms)[0m  [1mSELECT "cars".* FROM "cars"[0m
+  [1m[35mSpace Load (0.3ms)[0m  SELECT "spaces".* FROM "spaces"
+  Rendered reservations/_form.html.haml (25.6ms)
+  Rendered reservations/new.html.haml within layouts/application (29.1ms)
+Completed 200 OK in 439ms (Views: 408.1ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/reservations" for 190.43.170.56 at 2016-03-31 04:27:12 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/TusIJvIu3VIC2AA9BLU34p58qWf8lTbjQRIRkH27W4kgoKgk6NNF+d2AiquWAXoTcegokan9bXxO8W9Qq+jsQ==", "reservation"=>{"car_id"=>"1", "start_hour"=>"8", "end_hour"=>"9", "space_id"=>"1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "reservations" ("car_id", "space_id", "start_hour", "end_hour", "user_id", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["car_id", 1], ["space_id", 1], ["start_hour", 8], ["end_hour", 9], ["user_id", 3], ["status", "waiting"], ["created_at", "2016-03-31 04:27:12.863523"], ["updated_at", "2016-03-31 04:27:12.863523"]]
+  [1m[35m (25.5ms)[0m  commit transaction
+Redirected to https://instaparking-dominguez1509.c9users.io/reservations
+Completed 302 Found in 36ms (ActiveRecord: 26.3ms)
+
+
+Started GET "/reservations" for 190.43.170.56 at 2016-03-31 04:27:13 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mReservation Load (0.3ms)[0m  SELECT "reservations".* FROM "reservations"
+  Rendered reservations/_table.html.haml (7.6ms)
+  Rendered reservations/index.haml within layouts/application (26.3ms)
+Completed 200 OK in 428ms (Views: 425.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/fonts/glyphicons-pro/glyphicons-regular.woff" for 190.43.170.56 at 2016-03-31 04:27:14 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/font-awesome/fontawesome-webfont.woff?v=4.2.0" for 190.43.170.56 at 2016-03-31 04:27:14 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/glyphicons/glyphicons-halflings-regular.woff" for 190.43.170.56 at 2016-03-31 04:27:14 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 190.43.170.56 at 2016-03-31 04:32:22 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered main/index.haml within layouts/application (0.2ms)
+Completed 200 OK in 436ms (Views: 434.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/fonts/glyphicons/glyphicons-halflings-regular.woff" for 190.43.170.56 at 2016-03-31 04:32:23 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/font-awesome/fontawesome-webfont.woff?v=4.2.0" for 190.43.170.56 at 2016-03-31 04:32:23 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/glyphicons-pro/glyphicons-regular.woff" for 190.43.170.56 at 2016-03-31 04:32:23 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/type_of_cars" for 190.43.170.56 at 2016-03-31 04:32:51 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TypeOfCarsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mTypeOfCar Load (0.3ms)[0m  [1mSELECT "type_of_cars".* FROM "type_of_cars"[0m
+  Rendered type_of_cars/_table.html.haml (5.1ms)
+  Rendered type_of_cars/index.haml within layouts/application (7.5ms)
+Completed 200 OK in 405ms (Views: 397.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/rentals" for 190.43.170.56 at 2016-03-31 04:33:30 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RentalsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRental Load (0.4ms)[0m  [1mSELECT "rentals".* FROM "rentals"[0m
+  Rendered rentals/_table.html.haml (5.3ms)
+  Rendered rentals/index.haml within layouts/application (7.4ms)
+Completed 200 OK in 381ms (Views: 374.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/rentals/new" for 190.43.170.56 at 2016-03-31 04:33:35 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RentalsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered rentals/_form.html.haml (24.6ms)
+  Rendered rentals/new.html.haml within layouts/application (27.4ms)
+Completed 200 OK in 419ms (Views: 416.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/rentals/addMoreRows" for 190.43.170.56 at 2016-03-31 04:34:09 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RentalsController#addMoreRows as */*
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mTypeOfCar Load (0.4ms)[0m  SELECT "type_of_cars".* FROM "type_of_cars"
+  Rendered rentals/_form_row.haml (10.2ms)
+Completed 200 OK in 35ms (Views: 32.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/rentals/addMoreRows" for 190.43.170.56 at 2016-03-31 04:34:10 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RentalsController#addMoreRows as */*
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mTypeOfCar Load (0.3ms)[0m  SELECT "type_of_cars".* FROM "type_of_cars"
+  Rendered rentals/_form_row.haml (1.5ms)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/rentals" for 190.43.170.56 at 2016-03-31 04:34:47 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RentalsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WEMOZ+vnxDPAjudq8KHHSXsNFsaLLvQjRdU3aaDAKOaB+iDn44wyUW/zhUCq6xZ+vLNEwVJ7VU056rqSo5lmOQ==", "rental"=>{"address"=>"Av. Javier Prado", "space_quantity"=>"5", "spaces_attributes"=>{"145939884924"=>{"type_of_car_id"=>"3", "price"=>"3.5"}, "145939885038"=>{"type_of_car_id"=>"4", "price"=>"8"}}}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "rentals" ("space_quantity", "address", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["space_quantity", 5], ["address", "Av. Javier Prado"], ["user_id", 3], ["created_at", "2016-03-31 04:34:47.959836"], ["updated_at", "2016-03-31 04:34:47.959836"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "spaces" ("type_of_car_id", "price", "rental_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["type_of_car_id", 3], ["price", 3.5], ["rental_id", 3], ["created_at", "2016-03-31 04:34:47.962657"], ["updated_at", "2016-03-31 04:34:47.962657"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "spaces" ("type_of_car_id", "price", "rental_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["type_of_car_id", 4], ["price", 8.0], ["rental_id", 3], ["created_at", "2016-03-31 04:34:47.964744"], ["updated_at", "2016-03-31 04:34:47.964744"]]
+  [1m[35m (10.9ms)[0m  commit transaction
+Redirected to https://instaparking-dominguez1509.c9users.io/rentals
+Completed 302 Found in 109ms (ActiveRecord: 12.2ms)
+
+
+Started GET "/rentals" for 190.43.170.56 at 2016-03-31 04:34:48 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RentalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mRental Load (0.3ms)[0m  SELECT "rentals".* FROM "rentals"
+  Rendered rentals/_table.html.haml (2.3ms)
+  Rendered rentals/index.haml within layouts/application (5.1ms)
+Completed 200 OK in 427ms (Views: 423.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/fonts/glyphicons/glyphicons-halflings-regular.woff" for 190.43.170.56 at 2016-03-31 04:34:49 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/font-awesome/fontawesome-webfont.woff?v=4.2.0" for 190.43.170.56 at 2016-03-31 04:34:49 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/glyphicons-pro/glyphicons-regular.woff" for 190.43.170.56 at 2016-03-31 04:34:49 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/cars" for 190.43.170.56 at 2016-03-31 04:35:27 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCar Load (0.4ms)[0m  SELECT "cars".* FROM "cars"
+  [1m[36mTypeOfCar Load (0.3ms)[0m  [1mSELECT  "type_of_cars".* FROM "type_of_cars" WHERE "type_of_cars"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered cars/_table.html.haml (5.5ms)
+  Rendered cars/index.haml within layouts/application (8.4ms)
+Completed 200 OK in 604ms (Views: 590.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/cars/new" for 190.43.170.56 at 2016-03-31 04:35:41 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mTypeOfCar Load (0.4ms)[0m  [1mSELECT "type_of_cars".* FROM "type_of_cars"[0m
+  Rendered cars/_form.html.haml (28.2ms)
+  Rendered cars/new.html.haml within layouts/application (31.5ms)
+Completed 200 OK in 574ms (Views: 570.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/cars" for 190.43.170.56 at 2016-03-31 04:36:01 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LUqJMmdemp2y/aiNV1K5Oz8bK/LQ/oXQ+rbkG0zODub086eybzVs/x2AyqcNGGgM+KV59QmrJL6GiWngT5dAOQ==", "car"=>{"placa"=>"TGH 542", "type_of_car_id"=>"4", "description"=>"Camion del año 2005 Hyundai"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "cars" ("placa", "type_of_car_id", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["placa", "TGH 542"], ["type_of_car_id", 4], ["description", "Camion del año 2005 Hyundai"], ["user_id", 3], ["created_at", "2016-03-31 04:36:01.355784"], ["updated_at", "2016-03-31 04:36:01.355784"]]
+  [1m[36m (16.9ms)[0m  [1mcommit transaction[0m
+Redirected to https://instaparking-dominguez1509.c9users.io/cars
+Completed 302 Found in 25ms (ActiveRecord: 17.8ms)
+
+
+Started GET "/cars" for 190.43.170.56 at 2016-03-31 04:36:01 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mCar Load (0.4ms)[0m  [1mSELECT "cars".* FROM "cars"[0m
+  [1m[35mTypeOfCar Load (0.3ms)[0m  SELECT  "type_of_cars".* FROM "type_of_cars" WHERE "type_of_cars"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mTypeOfCar Load (0.4ms)[0m  [1mSELECT  "type_of_cars".* FROM "type_of_cars" WHERE "type_of_cars"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered cars/_table.html.haml (4.3ms)
+  Rendered cars/index.haml within layouts/application (7.4ms)
+Completed 200 OK in 539ms (Views: 535.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/fonts/glyphicons/glyphicons-halflings-regular.woff" for 190.43.170.56 at 2016-03-31 04:36:02 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/font-awesome/fontawesome-webfont.woff?v=4.2.0" for 190.43.170.56 at 2016-03-31 04:36:02 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/glyphicons-pro/glyphicons-regular.woff" for 190.43.170.56 at 2016-03-31 04:36:03 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/reservations" for 190.43.170.56 at 2016-03-31 04:36:13 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReservationsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mReservation Load (0.5ms)[0m  [1mSELECT "reservations".* FROM "reservations"[0m
+  Rendered reservations/_table.html.haml (2.4ms)
+  Rendered reservations/index.haml within layouts/application (6.2ms)
+Completed 200 OK in 549ms (Views: 544.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/reservations/new" for 190.43.170.56 at 2016-03-31 04:36:20 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReservationsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mCar Load (0.6ms)[0m  [1mSELECT "cars".* FROM "cars"[0m
+  [1m[35mSpace Load (0.2ms)[0m  SELECT "spaces".* FROM "spaces"
+  Rendered reservations/_form.html.haml (10.2ms)
+  Rendered reservations/new.html.haml within layouts/application (12.7ms)
+Completed 200 OK in 610ms (Views: 605.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/reservations" for 190.43.170.56 at 2016-03-31 04:37:56 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ASNC8/fKCknIInJBSv+Af5GuRWpngjoSTzg/XtRLwPzYmmxz/6H8K2dfEGsQtVFIVhAXbb7Xm3wzB7Kl1xKOIw==", "reservation"=>{"car_id"=>"1", "start_hour"=>"9", "end_hour"=>"12", "space_id"=>"1"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "reservations" ("car_id", "space_id", "start_hour", "end_hour", "user_id", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["car_id", 1], ["space_id", 1], ["start_hour", 9], ["end_hour", 12], ["user_id", 3], ["status", "waiting"], ["created_at", "2016-03-31 04:37:56.843023"], ["updated_at", "2016-03-31 04:37:56.843023"]]
+  [1m[35m (11.8ms)[0m  commit transaction
+Redirected to https://instaparking-dominguez1509.c9users.io/reservations
+Completed 302 Found in 19ms (ActiveRecord: 12.6ms)
+
+
+Started GET "/reservations" for 190.43.170.56 at 2016-03-31 04:37:57 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mReservation Load (0.3ms)[0m  SELECT "reservations".* FROM "reservations"
+  Rendered reservations/_table.html.haml (15.9ms)
+  Rendered reservations/index.haml within layouts/application (18.8ms)
+Completed 200 OK in 491ms (Views: 487.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/fonts/glyphicons/glyphicons-halflings-regular.woff" for 190.43.170.56 at 2016-03-31 04:37:58 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/font-awesome/fontawesome-webfont.woff?v=4.2.0" for 190.43.170.56 at 2016-03-31 04:37:58 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/glyphicons-pro/glyphicons-regular.woff" for 190.43.170.56 at 2016-03-31 04:37:58 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/reservations/new" for 190.43.170.56 at 2016-03-31 04:40:12 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReservationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCar Load (0.4ms)[0m  SELECT "cars".* FROM "cars"
+  [1m[36mSpace Load (0.4ms)[0m  [1mSELECT "spaces".* FROM "spaces"[0m
+  Rendered reservations/_form.html.haml (11.0ms)
+  Rendered reservations/new.html.haml within layouts/application (15.6ms)
+Completed 200 OK in 475ms (Views: 471.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/reservations" for 190.43.170.56 at 2016-03-31 04:40:20 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReservationsController#index as HTML
+  [1m[35mUser Load (5.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mReservation Load (0.5ms)[0m  [1mSELECT "reservations".* FROM "reservations"[0m
+  Rendered reservations/_table.html.haml (9.3ms)
+  Rendered reservations/index.haml within layouts/application (12.4ms)
+Completed 200 OK in 558ms (Views: 549.9ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/reservations/new" for 190.43.170.56 at 2016-03-31 04:41:08 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReservationsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mCar Load (0.4ms)[0m  [1mSELECT "cars".* FROM "cars"[0m
+  [1m[35mSpace Load (0.5ms)[0m  SELECT "spaces".* FROM "spaces"
+  Rendered reservations/_form.html.haml (13.8ms)
+  Rendered reservations/new.html.haml within layouts/application (19.7ms)
+Completed 200 OK in 589ms (Views: 580.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/reservations" for 190.43.170.56 at 2016-03-31 04:41:25 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mReservation Load (0.3ms)[0m  SELECT "reservations".* FROM "reservations"
+  Rendered reservations/_table.html.haml (3.2ms)
+  Rendered reservations/index.haml within layouts/application (12.2ms)
+Completed 200 OK in 536ms (Views: 532.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cars" for 190.43.170.56 at 2016-03-31 04:43:51 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCar Load (0.3ms)[0m  SELECT "cars".* FROM "cars"
+  [1m[36mTypeOfCar Load (0.2ms)[0m  [1mSELECT  "type_of_cars".* FROM "type_of_cars" WHERE "type_of_cars"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTypeOfCar Load (0.1ms)[0m  SELECT  "type_of_cars".* FROM "type_of_cars" WHERE "type_of_cars"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered cars/_table.html.haml (3.6ms)
+  Rendered cars/index.haml within layouts/application (6.3ms)
+Completed 200 OK in 491ms (Views: 486.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 190.43.170.56 at 2016-03-31 04:46:26 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered main/index.haml within layouts/application (0.2ms)
+Completed 200 OK in 513ms (Views: 509.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/fonts/glyphicons/glyphicons-halflings-regular.woff" for 190.43.170.56 at 2016-03-31 04:46:28 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/font-awesome/fontawesome-webfont.woff?v=4.2.0" for 190.43.170.56 at 2016-03-31 04:46:28 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/glyphicons-pro/glyphicons-regular.woff" for 190.43.170.56 at 2016-03-31 04:46:28 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started DELETE "/users/sign_out" for 190.43.170.56 at 2016-03-31 04:46:31 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as */*
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 204 No Content in 55ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 190.43.170.56 at 2016-03-31 04:46:32 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 190.43.170.56 at 2016-03-31 04:46:32 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb (192.3ms)
+Completed 200 OK in 201ms (Views: 198.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 190.43.170.56 at 2016-03-31 04:48:01 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QhvX2Lo8GmWoZoXtOc1KiekiAWr8RW9du1DwFz588uKOR4HXqt6SGJWehtDf2CeqN/YZ3kb+AWUGHJCkIv0cpA==", "user"=>{"names"=>"Diego", "last_names"=>"Dominguez", "email"=>"dominguez1509@gmail.com", "type_of_user_id"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'dominguez1509@gmail.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "names", "last_names", "type_of_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "dominguez1509@gmail.com"], ["encrypted_password", "$2a$10$QiqY7hPEHnp9/WHsQuWkoerVZtT3QiXmFVYpcVxDI5HpkWC7Ln8ZS"], ["names", "Diego"], ["last_names", "Dominguez"], ["type_of_user_id", 1], ["created_at", "2016-03-31 04:48:02.036604"], ["updated_at", "2016-03-31 04:48:02.036604"]]
+  [1m[35m (12.8ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-03-31 04:48:02.053334"], ["current_sign_in_at", "2016-03-31 04:48:02.053334"], ["last_sign_in_ip", "190.43.170.56"], ["current_sign_in_ip", "190.43.170.56"], ["sign_in_count", 1], ["updated_at", "2016-03-31 04:48:02.054684"], ["id", 4]]
+  [1m[36m (9.9ms)[0m  [1mcommit transaction[0m
+Redirected to https://instaparking-dominguez1509.c9users.io/
+Completed 302 Found in 135ms (ActiveRecord: 24.4ms)
+
+
+Started GET "/" for 190.43.170.56 at 2016-03-31 04:48:02 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered main/index.haml within layouts/application (0.2ms)
+Completed 200 OK in 473ms (Views: 471.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/fonts/glyphicons-pro/glyphicons-regular.woff" for 190.43.170.56 at 2016-03-31 04:48:03 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/font-awesome/fontawesome-webfont.woff?v=4.2.0" for 190.43.170.56 at 2016-03-31 04:48:03 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/glyphicons/glyphicons-halflings-regular.woff" for 190.43.170.56 at 2016-03-31 04:48:03 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 190.43.170.56 at 2016-03-31 04:48:13 +0000
+Cannot render console from 190.43.170.56! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered main/index.haml within layouts/application (2.6ms)
+Completed 200 OK in 528ms (Views: 513.5ms | ActiveRecord: 0.3ms)

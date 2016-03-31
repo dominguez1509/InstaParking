@@ -10,6 +10,7 @@ class RentalsController < ApplicationController
 
   def create
     rental = Rental.new(params_rental)
+    rental.user_id = current_user.id
     rental.save
     redirect_to :action => :index
   end

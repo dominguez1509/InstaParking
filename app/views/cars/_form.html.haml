@@ -1,0 +1,93 @@
+.row
+  .col-md-9.center-block
+    / Form Wizard
+    .admin-form.theme-primary
+      .panel
+        = simple_form_for(@car, html: {id: 'admin-form', autocomplete: 'off' }) do |f|
+          .panel-body
+            .section.row
+              .col-md-4
+                %label.field.prepend-icon{:for => "placa"}
+                  = f.input :placa, placeholder: "Placa", input_html: { id: 'placa', class: 'gui-input' }, label: false, :wrapper => false
+                  %label.field-icon{:for => "placa"}
+                    %i.fa.fa-user
+              .col-md-4
+                %label.field.select
+                  %select#section{:name => "car[type_of_car_id]"}
+                    %option{:value => ""} Seleccione el tipo de vehiculo
+                    - @type_of_cars.each do |type_of_car|
+                      %option{:value => "#{type_of_car.id}"}= type_of_car.name.to_s
+              .col-md-4
+                %label.field.prepend-icon{:for => "description"}
+                  = f.input :description, placeholder: "Descripcion", input_html: { id: 'description', class: 'gui-input' }, label: false, :wrapper => false
+                  %label.field-icon{:for => "description"}
+                    %i.fa.fa-user
+          .panel-footer.text-right
+            %button.button.btn-primary{:type => "submit"} Registrar
+            %button.button{:type => "reset"} Limpiar
+          / end .form-footer section
+        %a(href="#{cars_path}" class="btn btn-primary" role="button")
+          Volver
+    / end: .admin-form
+
+:javascript
+  $(document).ready(function () {
+    /* @custom validation method (smartCaptcha) 
+    ------------------------------------------------------------------ */
+        
+    $.validator.methods.smartCaptcha = function(value, element, param) {
+      return value == param;
+    };
+            
+    $( "#admin-form" ).validate({
+    
+      /* @validation states + elements 
+      ------------------------------------------- */
+      
+      errorClass: "state-error",
+      validClass: "state-success",
+      errorElement: "em",
+      
+      /* @validation rules 
+      ------------------------------------------ */
+          
+      rules: {
+        'car[placa]': {
+          required: true
+        },
+        'car[description]': {
+          required: true
+        }
+      },
+      
+      /* @validation error messages 
+      ---------------------------------------------- */
+          
+      messages:{
+        'car[placa]': {
+          required: 'Ingresar Placa'
+        },
+        'car[description]': {
+          required: 'Ingresar Descripcion'
+        }
+      },
+
+      /* @validation highlighting + error placement  
+      ---------------------------------------------------- */ 
+      
+      highlight: function(element, errorClass, validClass) {
+              $(element).closest('.field').addClass(errorClass).removeClass(validClass);
+      },
+      unhighlight: function(element, errorClass, validClass) {
+              $(element).closest('.field').removeClass(errorClass).addClass(validClass);
+      },
+      errorPlacement: function(error, element) {
+         if (element.is(":radio") || element.is(":checkbox")) {
+                  element.closest('.option-group').after(error);
+         } else {
+                  error.insertAfter(element.parent());
+         }
+      }
+                    
+    });
+  });
