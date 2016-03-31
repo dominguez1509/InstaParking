@@ -1,0 +1,13 @@
+%tr
+  %td
+    %label.field.select
+      %select#section{:name => "rental[spaces_attributes][" + @reg_n.to_s + "][type_of_car]"}
+        %option{:value => ""} Seleccione el tipo de vehiculo
+        - @type_of_cars.each do |type_of_car|
+          %option{:value => "#{type_of_car.id}"}= type_of_car.name.to_s
+  %td
+    %label.field{:for => "name"}
+      %input{:name => "rental[spaces_attributes][" + @reg_n.to_s + "][price]", :placeholder => "Precio", :type => "text"}
+  %td.text-right
+    %button.btn.btn-danger.btn-sm.deleted-item{:type => 'button', :onclick => 'del_bt(this)'}
+      %i.fa.fa-trash-o

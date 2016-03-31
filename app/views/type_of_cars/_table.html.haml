@@ -1,0 +1,25 @@
+.col-md-12
+  .panel.panel-visible
+    .panel-heading
+      .panel-title.hidden-xs
+        %span.glyphicon.glyphicon-tasks>
+        Lista de Tipos de Carro
+    .panel-body.pn
+      %table.table.table-striped.table-hover{:cellspacing => "0", :width => "100%"}
+        %thead
+          %tr
+            %th Nombre
+            %th Descripcion
+            %th Acciones
+        %tbody
+          - @type_of_cars.each do |type_of_car|
+            %tr
+              %td
+                = type_of_car.name.to_s
+              %td
+                = type_of_car.description.to_s
+              %td
+                %a.btn.btn-warning{:href => "#{edit_type_of_car_path(type_of_car.id)}"}
+                  Editar
+                %a.btn.btn-danger{:href => "#{type_of_car_path(type_of_car.id)}", 'data-method' => 'DELETE'}
+                  Eliminar

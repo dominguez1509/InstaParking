@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160328032228) do
+ActiveRecord::Schema.define(version: 20160331032229) do
 
   create_table "rentals", force: :cascade do |t|
     t.integer  "user_id"
@@ -23,7 +23,15 @@ ActiveRecord::Schema.define(version: 20160328032228) do
 
   create_table "spaces", force: :cascade do |t|
     t.integer  "rental_id"
-    t.integer  "type_of_car"
+    t.integer  "type_of_car_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.float    "price",          limit: 25
+  end
+
+  create_table "type_of_cars", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -42,6 +50,9 @@ ActiveRecord::Schema.define(version: 20160328032228) do
     t.integer  "type_of_user",           default: 1,  null: false
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "names"
+    t.string   "last_names"
+    t.integer  "type_of_user_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
