@@ -1,7 +1,7 @@
 class CarsController < ApplicationController
   before_filter :authenticate_user!
   def index
-    @cars = Car.all
+    @cars = Car.where("user_id = ?",current_user.id)
   end
 
   def new

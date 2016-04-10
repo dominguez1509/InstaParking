@@ -1,9 +1,10 @@
-.bg-light.dark.p30.br-b.br-grey
-  .row
-    .col-md-3
-      .input-group.input-group-merge.input-hero.mb10
-        %a.btn.btn-primary.btn-block{:href => "#{new_reservation_path}"}
-          Realizar Reservacion
+- if current_user.type_of_user_id == 2
+  .bg-light.dark.p30.br-b.br-grey
+    .row
+      .col-md-3
+        .input-group.input-group-merge.input-hero.mb10
+          %a.btn.btn-primary.btn-block{:href => "#{new_reservation_path}"}
+            Realizar Reservacion
 .tab-block.p20.mt10
   %section
     = render :partial => 'table'

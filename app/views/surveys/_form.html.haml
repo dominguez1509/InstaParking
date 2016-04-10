@@ -1,0 +1,107 @@
+.row
+  .col-md-9.center-block
+    / Form Wizard
+    .admin-form.theme-primary
+      .panel
+        = simple_form_for(@survey, html: {id: 'admin-form', autocomplete: 'off' }) do |f|
+          .panel-body
+            .section.row
+              .col-md-4
+                %label.field.prepend-icon{:for => "user_id"}
+                  = f.input :user_id, placeholder: "Usuario 1", input_html: { value:@user_id,id: 'user_id', class: 'gui-input' }, label: false, :wrapper => false
+                  %label.field-icon{:for => "user_id"}
+              .col-md-4
+                %label.field.prepend-icon{:for => "user_id_2"}
+                  = f.input :user_id_2, placeholder: "Usuario 2", input_html: { value:@user_id_2,id: 'user_id_2', class: 'gui-input' }, label: false, :wrapper => false
+                  %label.field-icon{:for => "user_id_2"}
+              .col-md-4
+                %label.field.prepend-icon{:for => "type_of_survey"}
+                  = f.input :type_of_survey, placeholder: "Tipo de Formulario", input_html: { value:@type_of_survey,id: 'type_of_survey', class: 'gui-input' }, label: false, :wrapper => false
+                  %label.field-icon{:for => "type_of_survey"}
+            .section.row
+              .col-md-4
+                %label.field.prepend-icon{:for => "object_score"}
+                  = f.input :object_score, placeholder: "Score de Objeto", input_html: { id: 'object_score', class: 'gui-input' }, label: false, :wrapper => false
+                  %label.field-icon{:for => "object_score"}
+              .col-md-4
+                %label.field.prepend-icon{:for => "user_score"}
+                  = f.input :user_score, placeholder: "Score para Usuario", input_html: { id: 'user_score', class: 'gui-input' }, label: false, :wrapper => false
+                  %label.field-icon{:for => "user_score"}
+              .col-md-4
+                %label.field.prepend-icon{:for => "description"}
+                  = f.input :description, placeholder: "Descripcion", input_html: { id: 'description', class: 'gui-input' }, label: false, :wrapper => false
+                  %label.field-icon{:for => "description"}
+            .section.row
+              .col-md-4
+                %label.field.prepend-icon{:for => "reservation_id"}
+                  = f.input :reservation_id, placeholder: "Reservacion", input_html: { value:@reservation_id,id: 'reservation_id', class: 'gui-input' }, label: false, :wrapper => false
+                  %label.field-icon{:for => "reservation_id"}
+          .panel-footer.text-right
+            %button.button.btn-primary{:type => "submit"} Registrar
+            %button.button{:type => "reset"} Limpiar
+          / end .form-footer section
+        %a(href="#{surveys_path}" class="btn btn-primary" role="button")
+          Volver
+    / end: .admin-form
+
+:javascript
+  $(document).ready(function () {
+    /* @custom validation method (smartCaptcha) 
+    ------------------------------------------------------------------ */
+        
+    $.validator.methods.smartCaptcha = function(value, element, param) {
+      return value == param;
+    };
+            
+    $( "#admin-form" ).validate({
+    
+      /* @validation states + elements 
+      ------------------------------------------- */
+      
+      errorClass: "state-error",
+      validClass: "state-success",
+      errorElement: "em",
+      
+      /* @validation rules 
+      ------------------------------------------ */
+          
+      rules: {
+        'car[placa]': {
+          required: true
+        },
+        'car[description]': {
+          required: true
+        }
+      },
+      
+      /* @validation error messages 
+      ---------------------------------------------- */
+          
+      messages:{
+        'car[placa]': {
+          required: 'Ingresar Placa'
+        },
+        'car[description]': {
+          required: 'Ingresar Descripcion'
+        }
+      },
+
+      /* @validation highlighting + error placement  
+      ---------------------------------------------------- */ 
+      
+      highlight: function(element, errorClass, validClass) {
+              $(element).closest('.field').addClass(errorClass).removeClass(validClass);
+      },
+      unhighlight: function(element, errorClass, validClass) {
+              $(element).closest('.field').removeClass(errorClass).addClass(validClass);
+      },
+      errorPlacement: function(error, element) {
+         if (element.is(":radio") || element.is(":checkbox")) {
+                  element.closest('.option-group').after(error);
+         } else {
+                  error.insertAfter(element.parent());
+         }
+      }
+                    
+    });
+  });

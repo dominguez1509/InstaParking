@@ -8,6 +8,7 @@
       %table.table.table-striped.table-hover{:cellspacing => "0", :width => "100%"}
         %thead
           %tr
+            %th Usuario
             %th Cantidad de Espacios
             %th Ciudad
             %th Dirección
@@ -16,9 +17,11 @@
           - @rentals.each do |rental|
             %tr
               %td
+                = rental.user.names.to_s
+              %td
                 = rental.space_quantity.to_s
               %td
-                = City.find(rental.city_id).name.to_s
+                = rental.city.name.to_s
               %td
                 = rental.address.to_s
               %td

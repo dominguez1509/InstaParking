@@ -1,11 +1,11 @@
 class ReservationsController < ApplicationController
   before_filter :authenticate_user!
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.where("user_id = ?",current_user.id)
   end
 
   def new
-    @cars = Car.all
+    @cars = Car.where("user_id = ?",current_user.id)
     @cities = City.all
     @reservation = Reservation.new
   end
@@ -41,6 +41,41 @@ class ReservationsController < ApplicationController
       @combo << { 'id' => x.id, 'name' => x.name.to_s + 'Direccion: ' + Rental.find(x.rental_id).address.to_s + ' S/.' + x.price.to_s}
     end
     render json: {:combo => @combo}
+  end
+  
+  def accept
+    reservation = Reservation.find(params[:id])
+    reservation.status = "accepted"
+    reservation.save
+    redirect_to :action => :index
+  end
+  
+  def reject
+    reservation = Reservation.find(params[:id])
+    reservation.status = "rejected"
+    reservation.save
+    redirect_to :action => :index
+  end
+  
+  def charged
+    reservation = Reservation.find(params[:id])
+    reservation.status = "cobrado"
+    reservation.save
+    redirect_to :action => :index
+  end
+  
+  def fill_survey_owner
+    reservation = Reservation.find(params[:id])
+    reservationuser = Rental.find(Space.find(reservation.space_id).rental_id).user_id
+    reservationuser2 = reservation.user_id
+    redirect_to url_for(:controller => :surveys, :action => :new, :reservation_id => params[:id], :user_id => reservationuser, :user_id_2 => reservationuser2, :type_of_survey => 1)
+  end
+  
+  def fill_survey_user
+    reservation = Reservation.find(params[:id])
+    reservationuser = reservation.user_id
+    reservationuser2 = Rental.find(Space.find(reservation.space_id).rental_id).user_id
+    redirect_to url_for(:controller => :surveys, :action => :new, :reservation_id => params[:id], :user_id => reservationuser, :user_id_2 => reservationuser2, :type_of_survey => 2)
   end
 
   private

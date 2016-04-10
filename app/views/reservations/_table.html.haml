@@ -31,7 +31,13 @@
               %td
                 = reservation.status.to_s
               %td
-                %a.btn.btn-warning{:href => "#{edit_reservation_path(reservation.id)}"}
-                  Editar
-                %a.btn.btn-danger{:href => "#{reservation_path(reservation.id)}", 'data-method' => 'DELETE'}
-                  Eliminar
+                %a.btn.btn-success{:href => "#{accept_reservation_path(reservation.id)}"}
+                  Aceptar
+                %a.btn.btn-danger{:href => "#{reject_reservation_path(reservation.id)}"}
+                  Rechazar
+                %a.btn.btn-primary{:href => "#{charged_reservation_path(reservation.id)}"}
+                  Cobrado
+                %a.btn.btn-info{:href => "#{fill_survey_owner_reservation_path(reservation.id)}"}
+                  Feedback Del Dueño
+                %a.btn.btn-info{:href => "#{fill_survey_user_reservation_path(reservation.id)}"}
+                  Feedback Del Usuario

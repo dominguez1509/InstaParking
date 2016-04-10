@@ -1,0 +1,44 @@
+.col-md-12
+  .panel.panel-visible
+    .panel-heading
+      .panel-title.hidden-xs
+        %span.glyphicon.glyphicon-tasks>
+        Lista de Feedbacks
+    .panel-body.pn
+      %table.table.table-striped.table-hover{:cellspacing => "0", :width => "100%"}
+        %thead
+          %tr
+            %th ID
+            %th user_id
+            %th user_id_2
+            %th reservation_id
+            %th type_of_survey
+            %th object_score
+            %th user_score
+            %th description
+            %th Acciones
+        %tbody
+          - @surveys.each do |survey|
+            %tr
+              %td
+                = survey.id.to_s
+              %td
+                = survey.user_id
+              %td
+                = survey.user_id_2
+              %td
+                = survey.reservation_id
+              %td
+                = survey.type_of_survey
+              %td
+                = survey.object_score
+              %td
+                = survey.user_score
+              %td
+                = survey.description
+              %td
+              %td
+                %a.btn.btn-warning{:href => "#{edit_survey_path(survey.id)}"}
+                  Editar
+                %a.btn.btn-danger{:href => "#{survey_path(survey.id)}", 'data-method' => 'DELETE'}
+                  Eliminar

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409235652) do
+ActiveRecord::Schema.define(version: 20160410005648) do
 
   create_table "cars", force: :cascade do |t|
     t.integer  "user_id"
@@ -45,8 +45,10 @@ ActiveRecord::Schema.define(version: 20160409235652) do
     t.datetime "start_hour"
     t.datetime "end_hour"
     t.string   "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "owner_survey"
+    t.integer  "user_survey"
   end
 
   create_table "spaces", force: :cascade do |t|
@@ -56,6 +58,18 @@ ActiveRecord::Schema.define(version: 20160409235652) do
     t.datetime "updated_at",                null: false
     t.float    "price",          limit: 25
     t.string   "name"
+  end
+
+  create_table "surveys", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "type_of_survey"
+    t.integer  "object_score"
+    t.integer  "user_score"
+    t.string   "description"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "user_id_2"
+    t.integer  "reservation_id"
   end
 
   create_table "type_of_cars", force: :cascade do |t|

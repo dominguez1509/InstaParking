@@ -1,7 +1,9 @@
 class RentalsController < ApplicationController
   before_filter :authenticate_user!
   def index
-    @rentals = Rental.all
+    @rentals = Rental.where("user_id = ?",current_user.id)
+    puts current_user
+    puts current_user.inspect
   end
 
   def new

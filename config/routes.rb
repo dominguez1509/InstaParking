@@ -26,6 +26,13 @@ Rails.application.routes.draw do
     collection do
       post 'complete'
     end
+    member do
+      get 'accept'
+      get 'reject'
+      get 'charged'
+      get 'fill_survey_owner'
+      get 'fill_survey_user'
+    end
   end
   
   resources :rentals do
@@ -33,6 +40,8 @@ Rails.application.routes.draw do
       post 'addMoreRows'
     end
   end
+  
+  resources :surveys
 
   # Example resource route with options:
   #   resources :products do
