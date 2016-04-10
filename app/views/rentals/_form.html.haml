@@ -16,6 +16,12 @@
                   = f.input :space_quantity, placeholder: "Cantidad", input_html: { id: 'space_quantity', class: 'gui-input' }, label: false, :wrapper => false
                   %label.field-icon{:for => "space_quantity"}
                     %i.fa.fa-user
+              .col-md-4
+                %label.field.select
+                  %select#section{:name => "rental[city_id]"}
+                    %option{:value => ""} Seleccione la ciudad
+                    - @cities.each do |city|
+                      %option{:value => "#{city.id}"}= city.name.to_s
             .section.row
               .col-md-2
                 .section
@@ -28,6 +34,7 @@
                     %table.table.table-hover
                       %thead
                         %tr.primary
+                          %th Nombre
                           %th Tipo de Carro
                           %th Precio x Hora
                           %th X
@@ -39,10 +46,13 @@
                                 = hidden_field_tag "rental[spaces_attributes][" + @reg_n.to_s + "][id]", detail.id
                               %td
                                 %label.field{:for => "name"}
+                                  %input{:name => "rental[spaces_attributes][" + @reg_n.to_s + "][name]", :placeholder => "Nombre", :type => "text", :value => detail.price}
+                              %td
+                                %label.field{:for => "name"}
                                   %input{:name => "rental[spaces_attributes][" + @reg_n.to_s + "][type_of_car_id]", :placeholder => "Nombre", :type => "text", :value => (TypeOfCar.find(detail.item_asset_id).name)}
                               %td
                                 %label.field{:for => "name"}
-                                  %input{:name => "rental[spaces_attributes][" + @reg_n.to_s + "][price]", :placeholder => "Nombre", :type => "text", :value => detail.price}
+                                  %input{:name => "rental[spaces_attributes][" + @reg_n.to_s + "][price]", :placeholder => "Precio", :type => "text", :value => detail.price}
                               %td.text-right
                                 %label.option.option-danger
                                   = check_box 'rental[spaces_attributes]', '[' + @reg_n.to_s + '][_destroy]'

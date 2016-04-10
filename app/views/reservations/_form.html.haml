@@ -8,28 +8,34 @@
             .section.row
               .col-md-4
                 %label.field.select
-                  %select#section{:name => "reservation[car_id]"}
+                  %select#car_chosen{:name => "reservation[car_id]"}
                     %option{:value => ""} Seleccione el vehiculo
                     - @cars.each do |car|
                       %option{:value => "#{car.id}"}= car.placa.to_s
               .col-md-4
                 %label.field.prepend-icon{:for => "start_hour"}
-                  = f.input :start_hour, placeholder: "Hora Inicio", input_html: { id: 'start_hour', class: 'gui-input' }, label: false, :wrapper => false
+                  = f.input :start_hour, placeholder: "Hora Inicio", input_html: { id: 'start_hour', class: 'gui-input hasDatepicker' }, label: false, :wrapper => false
                   %label.field-icon{:for => "start_hour"}
                     %i.fa.fa-user
               .col-md-4
                 %label.field.prepend-icon{:for => "end_hour"}
-                  = f.input :end_hour, placeholder: "Hora Fin", input_html: { id: 'end_hour', class: 'gui-input' }, label: false, :wrapper => false
+                  = f.input :end_hour, placeholder: "Hora Fin", input_html: { id: 'end_hour', class: 'gui-input hasDatepicker' }, label: false, :wrapper => false
                   %label.field-icon{:for => "end_hour"}
                     %i.fa.fa-user
             .section.row
-              .col-md-1
               .col-md-5
                 %label.field.select
-                  %select#section{:name => "reservation[space_id]"}
-                    %option{:value => ""} Seleccione la ubicacion
-                    - @spaces.each do |space|
-                      %option{:value => "#{space.id}"}= space.id.to_s
+                  %select#city-select{:name => "reservation[city_id]"}
+                    %option{:value => ""} Seleccione el distrito
+                    - @cities.each do |city|
+                      %option{:value => "#{city.id}"}= city.name.to_s
+              .col-md-2
+                %a(href="javascript:update_spaces();" id="btn-add-article" class="btn btn-success" role="button")
+                  Buscar Espacios
+              .col-md-4
+                %label.field.select
+                  %select#space-select{:name => "reservation[space_id]"}
+                    %option{:value => ""} Seleccione el espacio
           .panel-footer.text-right
             %button.button.btn-primary{:type => "submit"} Registrar
             %button.button{:type => "reset"} Limpiar
@@ -40,6 +46,7 @@
 
 :javascript
   $(document).ready(function () {
+    
     /* @custom validation method (smartCaptcha) 
     ------------------------------------------------------------------ */
         
@@ -99,3 +106,39 @@
                     
     });
   });
+  
+  function update_spaces(){
+    var url="#{complete_reservations_path}";
+    var car_chosen=$('#car_chosen').val();
+    var start_hour_chosen=$('#start_hour').val();
+    var end_hour_chosen=$('#end_hour').val();
+    var city_chosen=$('#city-select').val();
+    var form_token="#{form_authenticity_token}";
+    var default_value=0;
+    var str_html = "";
+    $.ajax({
+        type: "POST",
+        url: url,
+        async: false,
+        data: {  car: car_chosen, start_hour: start_hour_chosen,end_hour: end_hour_chosen,city: city_chosen,authenticity_token: form_token}
+    }).done(function( data ) {
+      newOptions = [];
+      $.each(data.combo, function(key, value){
+        item = {};
+        item['name'] = value.name;
+        item['id'] = value.id;
+        newOptions.push(item);
+      });
+      $('#space-select').empty();
+      $('#space-select').append(
+          $("<option></option>").attr("value", "0").text("Seleccione el espacio").attr("selected","selected")
+        )
+      $.each(newOptions, function(key,value){
+        $('#space-select').append(
+          $("<option></option>").attr("value", value.id).text(value.name)
+        )
+      });
+    });
+  }
+  
+  

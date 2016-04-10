@@ -9,6 +9,7 @@
         %thead
           %tr
             %th Cantidad de Espacios
+            %th Ciudad
             %th Dirección
             %th Acciones
         %tbody
@@ -16,6 +17,8 @@
             %tr
               %td
                 = rental.space_quantity.to_s
+              %td
+                = City.find(rental.city_id).name.to_s
               %td
                 = rental.address.to_s
               %td

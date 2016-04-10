@@ -11,6 +11,7 @@
     = stylesheet_link_tag "default_skin/css/theme", media: "screen", rel: "stylesheet", type: "text/css"
     / Admin Panels CSS
     = stylesheet_link_tag "admin-plugins/admin-panels/adminpanels", media: "screen", rel: "stylesheet", type: "text/css"
+    = stylesheet_link_tag "admin-forms/css/admin-forms", media: "screen", rel: "stylesheet", type: "text/css"
     = stylesheet_link_tag "plugins/magnific/magnific-popup", media: "screen", rel: "stylesheet", type: "text/css"
     = stylesheet_link_tag "admin-plugins/admin-modal/adminmodal", media: "screen", rel: "stylesheet", type: "text/css"
     / Admin Forms CSS
@@ -73,6 +74,10 @@
                   %span.glyphicons.glyphicons-shield
                   Tipos de Auto
               %li
+                %a{:href => "#{cities_path}"}
+                  %span.glyphicons.glyphicons-shield
+                  Ciudades
+              %li
                 %a{:href => "#{rentals_path}"}
                   %span.glyphicons.glyphicons-shield
                   Mis Locales
@@ -128,6 +133,7 @@
     / Form Validations
     = javascript_include_tag 'admin-forms/js/jquery.validate.min'
     = javascript_include_tag 'admin-forms/js/additional-methods.min'
+    = javascript_include_tag 'admin-forms/js/jquery-ui-timepicker.min'
     / Admin Panels
     = javascript_include_tag 'admin-plugins/admin-panels/json2'
     = javascript_include_tag 'admin-plugins/admin-panels/jquery.ui.touch-punch.min'

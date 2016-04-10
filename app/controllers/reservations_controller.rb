@@ -6,7 +6,7 @@ class ReservationsController < ApplicationController
 
   def new
     @cars = Car.all
-    @spaces = Space.all
+    @cities = City.all
     @reservation = Reservation.new
   end
 
@@ -30,6 +30,17 @@ class ReservationsController < ApplicationController
   def destroy
     reservation = Reservation.destroy(params[:id])
     redirect_to :action => :index
+  end
+  
+  def complete
+    car_type = Car.find(params[:car]).type_of_car_id
+    city = params[:city]
+    @combo=Array.new
+    @spaces = Space.where("type_of_car_id = ? AND rental_id IN(SELECT id FROM rentals WHERE city_id = ?)",car_type,city)
+    @spaces.each do |x|
+      @combo << { 'id' => x.id, 'name' => x.name.to_s + 'Direccion: ' + Rental.find(x.rental_id).address.to_s + ' S/.' + x.price.to_s}
+    end
+    render json: {:combo => @combo}
   end
 
   private

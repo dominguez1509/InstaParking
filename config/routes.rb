@@ -18,9 +18,15 @@ Rails.application.routes.draw do
   
   resources :type_of_cars
   
+  resources :cities
+  
   resources :cars
   
-  resources :reservations
+  resources :reservations do
+    collection do
+      post 'complete'
+    end
+  end
   
   resources :rentals do
     collection do

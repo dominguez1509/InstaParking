@@ -1,0 +1,28 @@
+.col-md-12
+  .panel.panel-visible
+    .panel-heading
+      .panel-title.hidden-xs
+        %span.glyphicon.glyphicon-tasks>
+        Lista de Ciudades
+    .panel-body.pn
+      %table.table.table-striped.table-hover{:cellspacing => "0", :width => "100%"}
+        %thead
+          %tr
+            %th ID
+            %th Nombre
+            %th Código
+            %th Acciones
+        %tbody
+          - @cities.each do |city|
+            %tr
+              %td
+                = city.id.to_s
+              %td
+                = city.name.to_s
+              %td
+                = city.code.to_s
+              %td
+                %a.btn.btn-warning{:href => "#{edit_city_path(city.id)}"}
+                  Editar
+                %a.btn.btn-danger{:href => "#{city_path(city.id)}", 'data-method' => 'DELETE'}
+                  Eliminar

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331040610) do
+ActiveRecord::Schema.define(version: 20160409235652) do
 
   create_table "cars", force: :cascade do |t|
     t.integer  "user_id"
@@ -22,20 +22,28 @@ ActiveRecord::Schema.define(version: 20160331040610) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "cities", force: :cascade do |t|
+    t.string   "name"
+    t.string   "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "rentals", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "space_quantity"
     t.string   "address"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "city_id"
   end
 
   create_table "reservations", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "car_id"
     t.integer  "space_id"
-    t.integer  "start_hour"
-    t.integer  "end_hour"
+    t.datetime "start_hour"
+    t.datetime "end_hour"
     t.string   "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -47,6 +55,7 @@ ActiveRecord::Schema.define(version: 20160331040610) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.float    "price",          limit: 25
+    t.string   "name"
   end
 
   create_table "type_of_cars", force: :cascade do |t|

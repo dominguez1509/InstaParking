@@ -1,5 +1,8 @@
 %tr
   %td
+    %label.field{:for => "name"}
+      %input{:name => "rental[spaces_attributes][" + @reg_n.to_s + "][name]", :placeholder => "Nombre", :type => "text"}
+  %td
     %label.field.select
       %select#section{:name => "rental[spaces_attributes][" + @reg_n.to_s + "][type_of_car_id]"}
         %option{:value => ""} Seleccione el tipo de vehiculo

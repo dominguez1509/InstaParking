@@ -5,6 +5,7 @@ class RentalsController < ApplicationController
   end
 
   def new
+    @cities = City.all
     @rental = Rental.new
   end
 
@@ -16,6 +17,7 @@ class RentalsController < ApplicationController
   end
 
   def edit
+    @cities = City.all
     @rental = Rental.find(params[:id])
   end
 
@@ -38,8 +40,9 @@ class RentalsController < ApplicationController
   private
   def params_rental
     params.require(:rental).permit(
-      :space_quantity, :address, spaces_attributes: [
+      :space_quantity, :address, :city_id,spaces_attributes: [
         :id,
+        :name,
         :type_of_car_id,
         :price,
         :_destroy
