@@ -15,6 +15,13 @@ class SurveysController < ApplicationController
   def create
     survey = Survey.new(params_survey)
     survey.save
+    reservation = Reservation.find(survey.reservation_id)
+    if survey.type_of_survey == 1
+      reservation.owner_survey = 1
+    else
+      reservation.user_survey = 1
+    end
+    reservation.save
     redirect_to :action => :index
   end
 
@@ -30,6 +37,10 @@ class SurveysController < ApplicationController
   def destroy
     survey = Survey.destroy(params[:id])
     redirect_to :action => :index
+  end
+  
+  def show
+    @survey = Survey.find(params[:id])
   end
 
   private

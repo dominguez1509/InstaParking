@@ -5,7 +5,7 @@
       .panel
         = simple_form_for(@survey, html: {id: 'admin-form', autocomplete: 'off' }) do |f|
           .panel-body
-            .section.row
+            .section.row{:style => 'display:none'}
               .col-md-4
                 %label.field.prepend-icon{:for => "user_id"}
                   = f.input :user_id, placeholder: "Usuario 1", input_html: { value:@user_id,id: 'user_id', class: 'gui-input' }, label: false, :wrapper => false
@@ -19,19 +19,41 @@
                   = f.input :type_of_survey, placeholder: "Tipo de Formulario", input_html: { value:@type_of_survey,id: 'type_of_survey', class: 'gui-input' }, label: false, :wrapper => false
                   %label.field-icon{:for => "type_of_survey"}
             .section.row
-              .col-md-4
-                %label.field.prepend-icon{:for => "object_score"}
-                  = f.input :object_score, placeholder: "Score de Objeto", input_html: { id: 'object_score', class: 'gui-input' }, label: false, :wrapper => false
-                  %label.field-icon{:for => "object_score"}
-              .col-md-4
-                %label.field.prepend-icon{:for => "user_score"}
-                  = f.input :user_score, placeholder: "Score para Usuario", input_html: { id: 'user_score', class: 'gui-input' }, label: false, :wrapper => false
-                  %label.field-icon{:for => "user_score"}
-              .col-md-4
+              .col-md-6
+                %label.field.prepend-icon{:for => "user_id"}
+                  - nombre1 = User.find(@user_id).names.to_s + ' ' + User.find(@user_id).last_names.to_s
+                  %input{:name => "survey[nombre_user]", :placeholder => "Nombre", :type => "text", :disabled => true, :value => nombre1 , :class => 'gui-input', :wrapper => false}
+                  %label.field-icon{:for => "user_id"}
+              .col-md-6
+                %label.field.prepend-icon{:for => "user_id_2"}
+                  - nombre2 = User.find(@user_id).names.to_s + ' ' + User.find(@user_id).last_names.to_s
+                  %input{:name => "survey[nombre_user2]", :placeholder => "Nombre", :type => "text", :disabled => true, :value => nombre2 , :class => 'gui-input', :wrapper => false}
+                  %label.field-icon{:for => "user_id_2"}
+            .section.row
+              .col-md-6
+                %label.field.select
+                  %select#space-select{:name => "survey[object_score]"}
+                    %option{:value => ""} Seleccione Una calificacion para el Local/Auto
+                    %option{:value => 1} 1
+                    %option{:value => 2} 2
+                    %option{:value => 3} 3
+                    %option{:value => 4} 4
+                    %option{:value => 5} 5
+              .col-md-6
+                %label.field.select
+                  %select#space-select{:name => "survey[user_score]"}
+                    %option{:value => ""} Seleccione Una calificacion para el Usuario
+                    %option{:value => 1} 1
+                    %option{:value => 2} 2
+                    %option{:value => 3} 3
+                    %option{:value => 4} 4
+                    %option{:value => 5} 5
+            .section.row
+              .col-md-12
                 %label.field.prepend-icon{:for => "description"}
                   = f.input :description, placeholder: "Descripcion", input_html: { id: 'description', class: 'gui-input' }, label: false, :wrapper => false
                   %label.field-icon{:for => "description"}
-            .section.row
+            .section.row{:style => 'display:none'}
               .col-md-4
                 %label.field.prepend-icon{:for => "reservation_id"}
                   = f.input :reservation_id, placeholder: "Reservacion", input_html: { value:@reservation_id,id: 'reservation_id', class: 'gui-input' }, label: false, :wrapper => false

@@ -46,10 +46,10 @@
                                 = hidden_field_tag "rental[spaces_attributes][" + @reg_n.to_s + "][id]", detail.id
                               %td
                                 %label.field{:for => "name"}
-                                  %input{:name => "rental[spaces_attributes][" + @reg_n.to_s + "][name]", :placeholder => "Nombre", :type => "text", :value => detail.price}
+                                  %input{:name => "rental[spaces_attributes][" + @reg_n.to_s + "][name]", :placeholder => "Nombre", :type => "text", :value => detail.name}
                               %td
                                 %label.field{:for => "name"}
-                                  %input{:name => "rental[spaces_attributes][" + @reg_n.to_s + "][type_of_car_id]", :placeholder => "Nombre", :type => "text", :value => (TypeOfCar.find(detail.item_asset_id).name)}
+                                  %input{:name => "rental[spaces_attributes][" + @reg_n.to_s + "][type_of_car_id]", :placeholder => "Nombre", :type => "text", :value => (TypeOfCar.find(detail.type_of_car_id).name)}
                               %td
                                 %label.field{:for => "name"}
                                   %input{:name => "rental[spaces_attributes][" + @reg_n.to_s + "][price]", :placeholder => "Precio", :type => "text", :value => detail.price}

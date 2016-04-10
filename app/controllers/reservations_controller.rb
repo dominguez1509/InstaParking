@@ -1,7 +1,11 @@
 class ReservationsController < ApplicationController
   before_filter :authenticate_user!
   def index
-    @reservations = Reservation.where("user_id = ?",current_user.id)
+    if current_user.type_of_user_id == 2
+      @reservations = Reservation.where("user_id = ?",current_user.id)
+    else
+      @reservations = Reservation.where("space_id IN(SELECT id FROM spaces WHERE rental_id IN(SELECT id FROM rentals WHERE user_id = ?))",current_user.id)
+    end
   end
 
   def new
@@ -14,6 +18,8 @@ class ReservationsController < ApplicationController
     reservation = Reservation.new(params_reservation)
     reservation.user_id = current_user.id
     reservation.status = "waiting"
+    reservation.owner_survey = 0
+    reservation.user_survey = 0
     reservation.save
     redirect_to :action => :index
   end
@@ -59,7 +65,7 @@ class ReservationsController < ApplicationController
   
   def charged
     reservation = Reservation.find(params[:id])
-    reservation.status = "cobrado"
+    reservation.status = "charged"
     reservation.save
     redirect_to :action => :index
   end
@@ -81,7 +87,7 @@ class ReservationsController < ApplicationController
   private
   def params_reservation
     params.require(:reservation).permit(
-      :car_id,:space_id,:start_hour,:end_hour
+      :car_id,:space_id,:start_hour,:end_hour, :user_id
     )
   end
 end

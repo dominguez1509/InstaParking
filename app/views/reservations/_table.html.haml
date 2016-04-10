@@ -9,7 +9,7 @@
         %thead
           %tr
             %th ID
-            %th Auto
+            %th Usuario
             %th Lugar
             %th Hora Inicio
             %th Hora Fin
@@ -21,23 +21,36 @@
               %td
                 = reservation.id.to_s
               %td
-                = reservation.car_id.to_s
+                = reservation.user.names.to_s + ' ' + reservation.user.last_names.to_s
               %td
-                = reservation.space_id.to_s
+                = Space.find(reservation.space_id).name.to_s
               %td
                 = reservation.start_hour.to_s
               %td
                 = reservation.end_hour.to_s
               %td
-                = reservation.status.to_s
+                -if reservation.status.to_s == 'waiting'
+                  = 'Esperando Confirmación'
+                -if reservation.status.to_s == 'accepted'
+                  = 'Aceptado'
+                -if reservation.status.to_s == 'rejected'
+                  = 'Rechazado'
+                -if reservation.status.to_s == 'charged'
+                  = 'Cobrado'
               %td
-                %a.btn.btn-success{:href => "#{accept_reservation_path(reservation.id)}"}
-                  Aceptar
-                %a.btn.btn-danger{:href => "#{reject_reservation_path(reservation.id)}"}
-                  Rechazar
-                %a.btn.btn-primary{:href => "#{charged_reservation_path(reservation.id)}"}
-                  Cobrado
-                %a.btn.btn-info{:href => "#{fill_survey_owner_reservation_path(reservation.id)}"}
-                  Feedback Del Dueño
-                %a.btn.btn-info{:href => "#{fill_survey_user_reservation_path(reservation.id)}"}
-                  Feedback Del Usuario
+                -if current_user.type_of_user_id == 1
+                  -if reservation.status == 'waiting'
+                    %a.btn.btn-success{:href => "#{accept_reservation_path(reservation.id)}"}
+                      Aceptar
+                    %a.btn.btn-danger{:href => "#{reject_reservation_path(reservation.id)}"}
+                      Rechazar
+                  -if reservation.status == 'accepted'
+                    %a.btn.btn-primary{:href => "#{charged_reservation_path(reservation.id)}"}
+                      Cobrado
+                  -if reservation.status == 'charged' && reservation.owner_survey != 1
+                    %a.btn.btn-info{:href => "#{fill_survey_owner_reservation_path(reservation.id)}"}
+                      Feedback Del Dueño
+                -if current_user.type_of_user_id == 2
+                  -if reservation.status == 'charged' && reservation.user_survey != 1
+                    %a.btn.btn-info{:href => "#{fill_survey_user_reservation_path(reservation.id)}"}
+                      Feedback Del Usuario

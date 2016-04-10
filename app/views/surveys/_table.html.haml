@@ -8,37 +8,31 @@
       %table.table.table-striped.table-hover{:cellspacing => "0", :width => "100%"}
         %thead
           %tr
-            %th ID
-            %th user_id
-            %th user_id_2
-            %th reservation_id
-            %th type_of_survey
-            %th object_score
-            %th user_score
-            %th description
-            %th Acciones
+            %th{:style => 'text-align:center'} ID
+            %th{:style => 'text-align:center'} Quien lo hizo
+            %th{:style => 'text-align:center'} Para Quien
+            %th{:style => 'text-align:center'} Cod de Reservacion
+            %th{:style => 'text-align:center'} Score para Local/Vehículo
+            %th{:style => 'text-align:center'} Score para Usuario
+            %th{:style => 'text-align:center'} Opinion
+            %th{:style => 'text-align:center'} Acciones
         %tbody
           - @surveys.each do |survey|
             %tr
               %td
                 = survey.id.to_s
               %td
-                = survey.user_id
+                = User.find(survey.user_id).names.to_s + ' ' + User.find(survey.user_id).last_names.to_s
               %td
-                = survey.user_id_2
+                = User.find(survey.user_id_2).names.to_s + ' ' + User.find(survey.user_id_2).last_names.to_s
               %td
                 = survey.reservation_id
-              %td
-                = survey.type_of_survey
-              %td
+              %td{:style => 'text-align:center'}
                 = survey.object_score
-              %td
+              %td{:style => 'text-align:center'}
                 = survey.user_score
               %td
                 = survey.description
-              %td
-              %td
-                %a.btn.btn-warning{:href => "#{edit_survey_path(survey.id)}"}
-                  Editar
-                %a.btn.btn-danger{:href => "#{survey_path(survey.id)}", 'data-method' => 'DELETE'}
-                  Eliminar
+              %td{:style => 'text-align:center'}
+                %a.btn.btn-success{:href => "#{survey_path(survey.id)}"}
+                  Ver Encuesta

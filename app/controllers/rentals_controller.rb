@@ -20,6 +20,8 @@ class RentalsController < ApplicationController
 
   def edit
     @cities = City.all
+    @action = 'edit'
+    @reg_n = ((Time.now.to_f)*100).to_i
     @rental = Rental.find(params[:id])
   end
 
