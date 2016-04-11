@@ -20,6 +20,9 @@ class ReservationsController < ApplicationController
     reservation.status = "waiting"
     reservation.owner_survey = 0
     reservation.user_survey = 0
+    fechadereserva = params[:fecha].to_date
+    reservation.start_hour = Time.new(fechadereserva.year,fechadereserva.month,fechadereserva.day, params[:timepicker1][0...2], params[:timepicker1][3...5], 00)
+    reservation.end_hour = Time.new(fechadereserva.year,fechadereserva.month,fechadereserva.day, params[:timepicker1][0...2], params[:timepicker1][3...5], 00)
     reservation.save
     redirect_to :action => :index
   end
@@ -87,7 +90,7 @@ class ReservationsController < ApplicationController
   private
   def params_reservation
     params.require(:reservation).permit(
-      :car_id,:space_id,:start_hour,:end_hour, :user_id
+      :car_id,:space_id,:fecha,:timepicker1,:timepicker2, :user_id
     )
   end
 end

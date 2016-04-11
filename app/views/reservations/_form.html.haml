@@ -1,27 +1,23 @@
 .row
-  .col-md-9.center-block
+  .col-md-11.center-block
     / Form Wizard
     .admin-form.theme-primary
       .panel
         = simple_form_for(@reservation, html: {id: 'admin-form', autocomplete: 'off' }) do |f|
           .panel-body
             .section.row
-              .col-md-4
+              .col-md-3
                 %label.field.select
                   %select#car_chosen{:name => "reservation[car_id]"}
                     %option{:value => ""} Seleccione el vehiculo
                     - @cars.each do |car|
                       %option{:value => "#{car.id}"}= car.placa.to_s
-              .col-md-4
-                %label.field.prepend-icon{:for => "start_hour"}
-                  = f.input :start_hour, placeholder: "Hora Inicio", input_html: { id: 'start_hour', class: 'gui-input hasDatepicker' }, label: false, :wrapper => false
-                  %label.field-icon{:for => "start_hour"}
-                    %i.fa.fa-user
-              .col-md-4
-                %label.field.prepend-icon{:for => "end_hour"}
-                  = f.input :end_hour, placeholder: "Hora Fin", input_html: { id: 'end_hour', class: 'gui-input hasDatepicker' }, label: false, :wrapper => false
-                  %label.field-icon{:for => "end_hour"}
-                    %i.fa.fa-user
+              .col-md-3
+                %input.gui-input{:name => "fecha", :placeholder => "Hora de Inicio", :type => "date"}
+              .col-md-3
+                %input.gui-input{:name => "timepicker1", :placeholder => "Hora de Inicio hh:mm", :type => "text"}
+              .col-md-3
+                %input.gui-input{:name => "timepicker2", :placeholder => "Hora de Fin hh:mm", :type => "text"}
             .section.row
               .col-md-5
                 %label.field.select
@@ -140,5 +136,3 @@
       });
     });
   }
-  
-  
